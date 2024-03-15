@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <circles-start-scripts/>
+
+  </head>
+  <body>
+
+    <circles-start-ui/>
+
+    <a-scene circles_scene_properties>
+      <a-assets>
+
+        <img id='skyMap' src='assets/textures/086_hdrmaps_com_free_above_clouds.jpg' crossorigin="anonymous">
+
+
+        <!--<a-asset-item id="island_1_gltf"      src="assets/models/island_1/scene.gltf" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="island_2_gltf"      src="assets/models/island_2/scene.gltf" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="island_3_gltf"      src="assets/models/island_3/scene.gltf" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item> -->
+
+        <a-asset-item id='labenvironmentmodel' src='assets\models\lab-enviroment.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='doubledoor_left' src='assets\models\doors\doubleDoor-left.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='doubledoor_right' src='assets\models\doors\doubleDoor-right.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='singledoor_metal' src='assets\models\doors\singleDoor-metal.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='singledoor_wood' src='assets\models\doors\singleDoor-wood.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <circles-assets/>
+      </a-assets>
+
+      <circles-manager-avatar/>
+
+      <a-entity id="game_manager" lights-interactive></a-entity>
+
+      <!-- ambient music/sound -->
+      <a-entity position="0 0 0" circles-sound="type:music; src:#magic_music; autoplay:true; loop:true; volume:0.02;"></a-entity>
+
+      <!-- example "artefact" -->
+      <a-entity id="Artefact-Gem"
+                position="1.963 1.7 2.339" rotation="0 0 0" scale="1 1 1"
+                geometry="primitive:octahedron; radius:0.5;"
+                material="color:rgb(255, 100, 20); roughness:0.2; metalness:0.8;"
+                circles-sphere-env-map="src:#skyMap"
+                circles-artefact="inspectPosition:0 0 0; inspectRotation:0 0 0; inspectScale:0.8 0.8 0.8;
+                                  textRotationY:90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
+                                  title:[~20-25 chars] Title Front;
+                                  description:[~240-280 chars]  This is the FRONT text that will display when an object is picked up. Adjust scale size and text rotation properties to make more visible.;
+                                  title_back:[~20-25 chars] Title Back;
+                                  description_back:[~240-280 chars] This is the back/secondary text that will display when you rotate the description bubble.;
+                                  description_offset:0 0.5 0;
+                                  desc_arrow_position:down;
+                                  label_text:Gem;"
+                circles-pickup-networked></a-entity> <!-- circles-pickup-networked allows this to be seen and interacted with other players -->
+
+      <a-entity id="welcome_description" position="-0.613 0.899 -8.491" rotation="0 84.07419837126648 0" 
+                circles-description="title_text_front: Ingenium Lab; title_text_back: Ingenium Lab; description_text_front: Welcome to the ingenium lab, here you will find an adventure awaiting.; description_text_back: Welcome to the ingenium lab, here you will find an adventure awaiting." 
+                circles-lookat="targetElement: #Player1Cam"><a-entity><a-entity position="" rotation=""><a-entity circles-rounded-rectangle="width: 2; height: 1.2; radius: 0.15" 
+                material="color: rgb(255,255,255); opacity: 0.9; shader: flat; transparent: true; side: double"></a-entity><a-entity position="-1 0.6 0"><a-entity id="title_text" 
+                position="0.1 -0.1 0" text="anchor: left; baseline: top; wrapCount: 20; color: rgb(0,0,0); width: 1.8; height: 0.14999999999999997; font: /global/assets/fonts/Roboto-msdf.json; value: Ingenium Lab"></a-entity>
+                <a-entity id="description_text" position="0.1 -0.35 0.01" 
+                text="anchor: left; baseline: top; wrapCount: 33; color: rgb(0,0,0); width: 1.8; height: 0.7; font: /global/assets/fonts/Roboto-msdf.json; value: Welcome to the ingenium lab, here you will find an adventure awaiting."></a-entity>
+              </a-entity><a-entity position="1 0.6 -0.01" rotation=""><a-entity id="title_text2" rotation="0 180 0" position="-0.1 -0.1 0" text="anchor: left; baseline: top; wrapCount: 20; color: rgb(0,0,0); width: 1.8; height: 0.14999999999999997; font: /global/assets/fonts/Roboto-msdf.json; value: Ingenium Lab"></a-entity>
+              <a-entity id="description_text2" rotation="0 180 0" position="-0.1 -0.35 0" text="anchor: left; baseline: top; wrapCount: 33; color: rgb(0,0,0); width: 1.8; height: 0.7; font: /global/assets/fonts/Roboto-msdf.json; value: Welcome to the ingenium lab, here you will find an adventure awaiting."></a-entity></a-entity><a-entity geometry="primitive: triangle; vertexA: 0.2 0 0; vertexB: -0.2 0 0; vertexC: 0 -0.2 0" material="color: rgb(255,255,255); opacity: 0.9; shader: flat; transparent: true; side: double" visible="" position="0 -0.6 0" rotation=""></a-entity></a-entity><a-entity id="rotate_desc_control" class="interactive button interactive_toggle" position="0 0.8 0" circles-interactive-visible="" geometry="primitive: plane; width: 0.3; height: 0.3" material="src: /global/assets/textures/icons/Icon-Rotate.png; color: rgb(255,255,255); shader: flat; transparent: true; side: double"></a-entity></a-entity></a-entity>
+
+      <!-- leaving this out for now as it doesn't play nice on mobile and VR 
+      <a-entity id="pdf-test" position="-14.4 2.2 6.4" rotation="0 62 0" scale="2.0 2.0 2.0" circles-pdf-loader="src:/global/assets/pdfs/Scavarelli2020_Article_VirtualRealityAndAugmentedReal.pdf;"></a-entity>
+      -->
+
+      <!-- Ingenium lab  -->
+
+      <a-entity id="ingeniumlab" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#labenvironmentmodel" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="leftdoubledoor" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#doubledoor_left" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="rightdoubledoor" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#doubledoor_right" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="metaldoor" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#singledoor_metal" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="metaldoor" position="0 0 -2.473" rotation="0 0 0" scale="1 1 1" gltf-model="#singledoor_metal" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="woodendoor" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#singledoor_wood" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="woodendoor" position="-1.15 0 -2.623" rotation="0 -180 0" scale="1 1 1" gltf-model="#singledoor_wood" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="woodendoor" position="0 0 -4.819" rotation="0 0 0" scale="1 1 1" gltf-model="#singledoor_wood" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+
+
+      <!-- ------------- -->
+      <a-entity circles-checkpoint position="0 0.1 0"></a-entity>
+      <a-entity circles-checkpoint position="1.69 0.1 -4.427"></a-entity>
+      <a-entity circles-checkpoint position="1.508 0.1 4.662"></a-entity>
+      <a-entity circles-checkpoint position="-0.554 0.1 7.509"></a-entity>
+      <a-entity circles-checkpoint position="-3.173 0.1 1.300"></a-entity>
+      <a-entity circles-checkpoint position="-2.699 0.1 -7.667"></a-entity>
+
+      <a-entity id="sunlight" position="0 20 0" rotation="40 0 0" 
+                light="type:directional; intensity:4; color:#d5e4f5; castShadow:false;"></a-entity>
+      <a-entity light="type:hemisphere; color:#FFFFFF; groundColor:#BCE2F4; intensity:3.0"></a-entity>
+
+      <a-entity id='skyBox'
+                rotation='0 200 0'
+                geometry='primitive:sphere; radius:50; segments-height:24; segments-width:24;'
+                material='shader:flat; src:#skyMap; side:back;'>
+      </a-entity>
+    </a-scene>
+
+    <circles-end-scripts/>
+  </body>
+</html>
