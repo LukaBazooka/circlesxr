@@ -14,16 +14,13 @@
 
         <img id='skyMap' src='assets/textures/086_hdrmaps_com_free_above_clouds.jpg' crossorigin="anonymous">
 
-
-        <!--<a-asset-item id="island_1_gltf"      src="assets/models/island_1/scene.gltf" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-        <a-asset-item id="island_2_gltf"      src="assets/models/island_2/scene.gltf" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-        <a-asset-item id="island_3_gltf"      src="assets/models/island_3/scene.gltf" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item> -->
-
         <a-asset-item id='labenvironmentmodel' src='assets\models\lab-enviroment.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='doubledoor_left' src='assets\models\doors\doubleDoor-left.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='doubledoor_right' src='assets\models\doors\doubleDoor-right.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='singledoor_metal' src='assets\models\doors\singleDoor-metal.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='singledoor_wood' src='assets\models\doors\singleDoor-wood.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <a-asset-item id="navmesh_gltf" src="assets/models/lab-floor.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
         <circles-assets/>
       </a-assets>
@@ -96,6 +93,8 @@
       <a-entity circles-checkpoint position="-0.554 0.1 7.509"></a-entity>
       <a-entity circles-checkpoint position="-3.173 0.1 1.300"></a-entity>
       <a-entity circles-checkpoint position="-2.699 0.1 -7.667"></a-entity>
+
+      <a-entity id="navmesh" position="0 -8.278 0" gltf-model="#navmesh_gltf" visible='true' nav-mesh></a-entity>
 
       <a-entity id="sunlight" position="0 20 0" rotation="40 0 0" 
                 light="type:directional; intensity:4; color:#d5e4f5; castShadow:false;"></a-entity>

@@ -19,7 +19,7 @@
         <a-asset-item id="island_2_gltf"      src="assets/models/island_2/scene.gltf" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="island_3_gltf"      src="assets/models/island_3/scene.gltf" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item> -->
 
-        <a-asset-item id='labenvironmentmodel' src='assets\models\lab-enviroment.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='industrial_room' src='assets\models\testscene.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='doubledoor_left' src='assets\models\doors\doubleDoor-left.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='doubledoor_right' src='assets\models\doors\doubleDoor-right.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='singledoor_metal' src='assets\models\doors\singleDoor-metal.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
@@ -52,15 +52,13 @@
                                   label_text:Gem;"
                 circles-pickup-networked></a-entity> <!-- circles-pickup-networked allows this to be seen and interacted with other players -->
 
-      <a-entity id="welcome_description" position="-0.613 0.899 -8.491" rotation="0 84.07419837126648 0" 
-                circles-description="title_text_front: Ingenium Lab; title_text_back: Ingenium Lab; description_text_front: Welcome to the ingenium lab, here you will find an adventure awaiting.; description_text_back: Welcome to the ingenium lab, here you will find an adventure awaiting." 
-                circles-lookat="targetElement: #Player1Cam"><a-entity><a-entity position="" rotation=""><a-entity circles-rounded-rectangle="width: 2; height: 1.2; radius: 0.15" 
-                material="color: rgb(255,255,255); opacity: 0.9; shader: flat; transparent: true; side: double"></a-entity><a-entity position="-1 0.6 0"><a-entity id="title_text" 
-                position="0.1 -0.1 0" text="anchor: left; baseline: top; wrapCount: 20; color: rgb(0,0,0); width: 1.8; height: 0.14999999999999997; font: /global/assets/fonts/Roboto-msdf.json; value: Ingenium Lab"></a-entity>
-                <a-entity id="description_text" position="0.1 -0.35 0.01" 
-                text="anchor: left; baseline: top; wrapCount: 33; color: rgb(0,0,0); width: 1.8; height: 0.7; font: /global/assets/fonts/Roboto-msdf.json; value: Welcome to the ingenium lab, here you will find an adventure awaiting."></a-entity>
-              </a-entity><a-entity position="1 0.6 -0.01" rotation=""><a-entity id="title_text2" rotation="0 180 0" position="-0.1 -0.1 0" text="anchor: left; baseline: top; wrapCount: 20; color: rgb(0,0,0); width: 1.8; height: 0.14999999999999997; font: /global/assets/fonts/Roboto-msdf.json; value: Ingenium Lab"></a-entity>
-              <a-entity id="description_text2" rotation="0 180 0" position="-0.1 -0.35 0" text="anchor: left; baseline: top; wrapCount: 33; color: rgb(0,0,0); width: 1.8; height: 0.7; font: /global/assets/fonts/Roboto-msdf.json; value: Welcome to the ingenium lab, here you will find an adventure awaiting."></a-entity></a-entity><a-entity geometry="primitive: triangle; vertexA: 0.2 0 0; vertexB: -0.2 0 0; vertexC: 0 -0.2 0" material="color: rgb(255,255,255); opacity: 0.9; shader: flat; transparent: true; side: double" visible="" position="0 -0.6 0" rotation=""></a-entity></a-entity><a-entity id="rotate_desc_control" class="interactive button interactive_toggle" position="0 0.8 0" circles-interactive-visible="" geometry="primitive: plane; width: 0.3; height: 0.3" material="src: /global/assets/textures/icons/Icon-Rotate.png; color: rgb(255,255,255); shader: flat; transparent: true; side: double"></a-entity></a-entity></a-entity>
+      <a-entity id="welcome_description" position="-13.171 0.899 9.197" rotation="0 0 0"
+                circles-description=" title_text_front:Ingenium Lab;
+                                      title_text_back:Ingenium Lab;
+                                      description_text_front:This is an example world. It is meant to showcase most of the features Circles' provides for your own worlds.;
+                                      description_text_back:This is an example world. It is meant to showcase most of the features Circles' provides for your own worlds.;
+                                      lookAtCamera:true;
+                                      "></a-entity>
 
       <!-- leaving this out for now as it doesn't play nice on mobile and VR 
       <a-entity id="pdf-test" position="-14.4 2.2 6.4" rotation="0 62 0" scale="2.0 2.0 2.0" circles-pdf-loader="src:/global/assets/pdfs/Scavarelli2020_Article_VirtualRealityAndAugmentedReal.pdf;"></a-entity>
@@ -68,7 +66,7 @@
 
       <!-- Ingenium lab  -->
 
-      <a-entity id="ingeniumlab" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#labenvironmentmodel" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="industrialroom" position="0 0 0" rotation="0 0 0" scale="0.1 0.1 0.1" gltf-model="#industrial_room" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       <a-entity id="leftdoubledoor" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#doubledoor_left" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       <a-entity id="rightdoubledoor" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#doubledoor_right" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       <a-entity id="metaldoor" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#singledoor_metal" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
