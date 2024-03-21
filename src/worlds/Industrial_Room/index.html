@@ -42,6 +42,8 @@
 
         <a-asset-item id='telegraph_bar' src='assets\models\industrail\office\telegraph-bar.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
+        <a-asset-item id="navmesh_gltf" src="assets/models/navmesh.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
 
         <circles-assets/>
       </a-assets>
@@ -109,6 +111,8 @@
       <a-entity id="officedoor" position="0 0 0" rotation="0 0 0" scale="0.2 0.2 0.2" gltf-model="#office_door" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
 
       <a-entity id="telegraphbar" position="0 0 0" rotation="0 0 0" scale="0.2 0.2 0.2" gltf-model="#telegraph_bar" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+
+      <a-entity id="navmesh" position="0 0 0" scale="0.2 0.2 0.2" gltf-model="#navmesh_gltf" visible='false' nav-mesh></a-entity>
 
 
       <!-- ------------- -->
