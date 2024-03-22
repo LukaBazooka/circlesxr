@@ -67,3 +67,4 @@ testingArea/
 *.code-workspace
 
 ### end global ignore
+.ngrok.exe.old
