@@ -68,3 +68,4 @@ testingArea/
 
 ### end global ignore
 .ngrok.exe.old
+package-lock.json
