@@ -106,20 +106,20 @@
                 circles-pickup-networked></a-entity> 
 
 
-      <!--<a-entity id="key"
-                position="0 3 0" rotation="0 0 0" scale="0.1 0.1 0.1"
+      <a-entity id="key"
+                position="-3.469 2.823 -7.626" rotation="0 0 0" scale="0.1 0.1 0.1"
                 gltf-model="#key_door"
                 circles-sphere-env-map="src:#skyMap"
                 circles-artefact="inspectPosition:0 0 0; inspectRotation:0 0 0; inspectScale:0.2 0.2 0.2;
                                   textRotationY:90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
-                                  title: Old Newspaper;
-                                  description: An old newspaper note, you cant tell from when it's from.;
-                                  title_back: Old Newspaper;
-                                  description_back: An old newspaper note, you cant tell from when it's from.;
+                                  title: Key;
+                                  description: A rusty key, you can open the door with this.;
+                                  title_back: Key;
+                                  description_back: A rusty key, you can open the door with this.;
                                   description_offset:0 0.5 0;
                                   desc_arrow_position:down;
-                                  label_text: Old Newspaper;"
-                circles-pickup-networked></a-entity>  -->
+                                  label_text: Key;"
+                circles-pickup-networked></a-entity>  
 
       <a-entity id="welcome_description" position="-1.270 1.633 -3.977" rotation="0 0 0"
                 circles-description=" title_text_front:Industrial Age;
@@ -138,14 +138,16 @@
                                       lookAtCamera:true;
                                       "></a-entity>
 
+
+      <a-entity id="sewing_description" position="-4.088 2.637 4.761" rotation="0 0 0"
+                circles-description=" title_text_front:Sewing Machine;
+                                      title_text_back:Sewing Machine;
+                                      description_text_front:The sewing machine was one of the key developments of textile manufacturing during the Industrial Era.;
+                                      description_text_back:The sewing machine was one of the key developments of textile manufacturing during the Industrial Era.;
+                                      lookAtCamera:true;
+                                      "></a-entity>
+
                                   
-
-
-                    
-
-      <!-- leaving this out for now as it doesn't play nice on mobile and VR 
-      <a-entity id="pdf-test" position="-14.4 2.2 6.4" rotation="0 62 0" scale="2.0 2.0 2.0" circles-pdf-loader="src:/global/assets/pdfs/Scavarelli2020_Article_VirtualRealityAndAugmentedReal.pdf;"></a-entity>
-      -->
 
       <!-- Industrial Room  -->
 
@@ -184,7 +186,7 @@
 
       <a-entity id="officedoor" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#office_door" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
 
-      <a-entity id="telegraphbar" position="0 0 0" rotation="0 0 0" scale="0.2 0.2 0.2" gltf-model="#telegraph_bar" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="telegraphbar" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#telegraph_bar" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
 
       <!--<a-entity id="key" position="0 0 0" rotation="0 0 0" scale="0.1 0.1 0.1" gltf-model="#key_door" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity> -->
 
@@ -228,6 +230,10 @@
       
       <a-entity circles-checkpoint position="-3.922 2.649 -8.116"></a-entity>
       <a-entity circles-checkpoint position="3.302 2.659 -8.083"></a-entity>
+
+      <a-entity circles-checkpoint position="2.220 2.649 -12.409"></a-entity>
+      <a-entity circles-checkpoint position="-2.709 2.659 -12.109"></a-entity>
+      <a-entity circles-checkpoint position="1.119 2.659 -15.906"></a-entity>
 
       <a-entity id="navmesh" position="0 -0.4 0" gltf-model="#navmesh_gltf" visible='false' nav-mesh></a-entity>
 
