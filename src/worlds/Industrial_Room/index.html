@@ -85,8 +85,10 @@
       <!-- Industrial Room  -->
 
       <a-entity id="industrialroom" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#industrial_room" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
-      <a-entity id="doorfactory_1" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#factorydoor_1" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
-      <a-entity id="doorfactory_2" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#factorydoor_2" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+
+      <a-entity id="doorfactory_1" position="-3.42 2.616 -10.88" rotation="0 0 0" scale="1 1 1" gltf-model="#factorydoor_1" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" animation_click="property: rotation; to: 0 -90 0; dur: 1000; easing: linear";></a-entity>
+      <a-entity id="doorfactory_2" position="2.681 2.616 -10.88" rotation="0 0 0" scale="1 1 1" gltf-model="#factorydoor_2" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" animation_click="property: rotation; to: 0 90 0; dur: 1000; easing: linear";></a-entity>
+      
 
       <a-entity id="needlepos1" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#needle_1" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       <a-entity id="needlepos2" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#needle_2" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
@@ -124,7 +126,7 @@
       <a-entity id="navmesh" position="0 -0.4 0" gltf-model="#navmesh_gltf" visible='false' nav-mesh></a-entity>
 
       <a-entity id="sunlight" position="0 20 0" rotation="40 0 0" 
-                light="type:directional; intensity:4; color:#d5e4f5; castShadow:false;"></a-entity>
+                light="type:directional; intensity:3; color:#d5e4f5; castShadow:false;"></a-entity>
       <a-entity light="type:hemisphere; color:#FFFFFF; groundColor:#BCE2F4; intensity:3.0"></a-entity>
 
       <a-entity id='skyBox'
