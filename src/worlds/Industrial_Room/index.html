@@ -1,0 +1,357 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <circles-start-scripts/>
+
+  </head>
+  <body>
+
+    <circles-start-ui/>
+
+    <a-scene circles_scene_properties>
+      <a-assets>
+
+        <img id='skyMap' src='assets/textures/night_sky.jpg' crossorigin="anonymous">
+
+        <!-- INDUSTRIAL MAIN ROOM ASSETS -->
+
+        <a-asset-item id='industrial_room' src='assets\models\industrail\enviroment.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='factorydoor_1' src='assets\models\industrail\door-factory-l.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='factorydoor_2' src='assets\models\industrail\door-factory-r.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <a-asset-item id='needle_1' src='assets\models\industrail\needle-1.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='needle_2' src='assets\models\industrail\needle-2.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <a-asset-item id='wheeljenny' src='assets\models\industrail\wheel-jenny.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <a-asset-item id='wheelloom_1' src='assets\models\industrail\wheel-loom-1.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='wheelloom_2' src='assets\models\industrail\wheel-loom-2.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='wheelloom_3' src='assets\models\industrail\wheel-loom-3.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <a-asset-item id='wheelsew' src='assets\models\industrail\wheel-sew.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <a-asset-item id='jenny_thread' src='assets\models\industrail\jenny_threads.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='loom_fabric1' src='assets\models\industrail\loomfabric1.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='loom_fabric2' src='assets\models\industrail\loomfabric2.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='loom_fabric3' src='assets\models\industrail\loomfabric3.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='textured_fabric1' src='assets\models\industrail\texturedfabric1.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='textured_fabric2' src='assets\models\industrail\texturedfabric2.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <!-- INDUSTRIAL ROOM OFFICE ASSETS -->
+
+        <a-asset-item id='cabinet1_door_l' src='assets\models\industrail\office\cabient1-door-l.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='cabinet1_door_r' src='assets\models\industrail\office\cabient1-door-r.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='cabinet2_door_l' src='assets\models\industrail\office\cabient2-door-l.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='cabinet2_door_r' src='assets\models\industrail\office\cabient2-door-r.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <a-asset-item id='note1' src='assets\models\newspaper1.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='note2' src='assets\models\newspaper2.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='note3' src='assets\models\newspaper3.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <a-asset-item id='key_door' src='assets\models\key.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <a-asset-item id='office_door' src='assets\models\industrail\office\door-office.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <a-asset-item id='telegraph_bar' src='assets\models\industrail\office\telegraph-bar.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <a-asset-item id="navmesh_gltf" src="assets/models/floor.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <circles-assets/>
+      </a-assets>
+
+      <circles-manager-avatar/>
+
+      <a-entity id="game_manager" lights-interactive></a-entity>
+
+      <!-- ambient music/sound -->
+      <a-entity position="0 0 0" circles-sound="type:music; src:#magic_music; autoplay:true; loop:true; volume:0.02;"></a-entity>
+
+      <!-- note pickup -->
+      <a-entity id="note1"
+                position="-2.664 0.448 3.195" rotation="-90 0 0" scale="0.1 0.1 0.1"
+                gltf-model="#note1"
+                circles-sphere-env-map="src:#skyMap"
+                circles-artefact="inspectPosition:0 0 0; inspectRotation:0 0 0; inspectScale:0.2 0.2 0.2;
+                                  textRotationY:90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
+                                  title: Old Newspaper;
+                                  description: An old newspaper note, you cant tell from when it's from.;
+                                  title_back: Old Newspaper;
+                                  description_back: An old newspaper note, you cant tell from when it's from.;
+                                  description_offset:0 0.5 0;
+                                  desc_arrow_position:down;
+                                  label_text: Old Newspaper;"
+                circles-pickup-networked></a-entity> 
+
+      <a-entity id="note2"
+                position="2.905 1.5 -0.679" rotation="-90 0 45" scale="0.1 0.1 0.1"
+                gltf-model="#note2"
+                circles-sphere-env-map="src:#skyMap"
+                circles-artefact="inspectPosition:0 0 0; inspectRotation:0 0 0; inspectScale:0.2 0.2 0.2;
+                                  textRotationY:90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
+                                  title: Old Newspaper;
+                                  description: An old newspaper note, you cant tell from when it's from.;
+                                  title_back: Old Newspaper;
+                                  description_back: An old newspaper note, you cant tell from when it's from.;
+                                  description_offset:0 0.5 0;
+                                  desc_arrow_position:down;
+                                  label_text: Old Newspaper;"
+                circles-pickup-networked></a-entity> 
+
+      <a-entity id="note3"
+                position="0 3.6 -14.283" rotation="-90 -42.540 0" scale="0.1 0.1 0.1"
+                gltf-model="#note3"
+                circles-sphere-env-map="src:#skyMap"
+                circles-artefact="inspectPosition:0 0 0; inspectRotation:0 0 0; inspectScale:0.2 0.2 0.2;
+                                  textRotationY:90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
+                                  title: Old Newspaper;
+                                  description: An old newspaper note, you cant tell from when it's from.;
+                                  title_back: Old Newspaper;
+                                  description_back: An old newspaper note, you cant tell from when it's from.;
+                                  description_offset:0 0.5 0;
+                                  desc_arrow_position:down;
+                                  label_text: Old Newspaper;"
+                circles-pickup-networked></a-entity> 
+
+
+      <a-entity id="key"
+                position="-3.7 2.9 -7.7" rotation="0 0 0" scale="0.1 0.1 0.1"
+                gltf-model="#key_door"
+                circles-sphere-env-map="src:#skyMap"
+                circles-artefact="inspectPosition:0 0 0; inspectRotation:0 0 0; inspectScale:0.2 0.2 0.2;
+                                  textRotationY:90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
+                                  title: Key;
+                                  description: A rusty key, you can open the door with this.;
+                                  title_back: Key;
+                                  description_back: A rusty key, you can open the door with this.;
+                                  description_offset:0 0.5 0;
+                                  desc_arrow_position:down;
+                                  label_text: Key;"
+                circles-pickup-networked></a-entity>  
+
+      <a-entity id="welcome_description" position="-1.270 1.633 -3.977" rotation="0 0 0"
+                circles-description=" title_text_front:Industrial Age;
+                                      title_text_back:Industrial Age;
+                                      description_text_front:Welcome to the industrial age, learn about technology and try to solve the puzzle to go to the next age.;
+                                      description_text_back:Welcome to the industrial age, learn about technology and try to solve the puzzle to go to the next age.;
+                                      lookAtCamera:true;
+                                      "></a-entity>
+
+
+      <a-entity id="jenny_description" position="-4.088 2.637 -0.131" rotation="0 0 0"
+                circles-description=" title_text_front:Spinning Jenny;
+                                      title_text_back:Spinning Jenny;
+                                      description_text_front:The spinning jenny was one of the key developments of textile manufacturing during the early Industrial Era.;
+                                      description_text_back:The spinning jenny was one of the key developments of textile manufacturing during the early Industrial Era.;
+                                      lookAtCamera:true;
+                                      "></a-entity>
+
+
+      <a-entity id="sewing_description" position="-4.088 2.637 4.761" rotation="0 0 0"
+                circles-description=" title_text_front:Sewing Machine;
+                                      title_text_back:Sewing Machine;
+                                      description_text_front:The sewing machine was one of the key developments of textile manufacturing during the Industrial Era.;
+                                      description_text_back:The sewing machine was one of the key developments of textile manufacturing during the Industrial Era.;
+                                      lookAtCamera:true;
+                                      "></a-entity>
+
+                                  
+
+      <!-- Industrial Room  -->
+
+      <a-entity id="industrialroom" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#industrial_room" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+
+      <a-entity id="opendoor1" position="-3.42 2.616 -10.88" rotation="0 0 0">
+                <a-entity class="button interactive" position="0 0 0" gltf-model="#factorydoor_1"
+                            animation__click="property:rotation.y; from: 0; to: 90; startEvents:click; dur: 1000;" shadow></a-entity>
+      </a-entity> 
+
+      <a-entity id="opendoor2" position="2.681 2.616 -10.88" rotation="0 0 0">
+                <a-entity class="button interactive" position="0 0 0" gltf-model="#factorydoor_2"
+                            animation__click="property:rotation.y; from: 0; to: -90; startEvents:click; dur: 1000;" shadow></a-entity>
+      </a-entity> 
+
+      <a-entity id="sewneedle1" position="0 -0.4 0">
+        <a-entity class="button interactive" id="needlepos1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#needle_1" circles-sphere-env-map="src:#skyMap" animation__mouseenter="property:position.y; from: 0; to: 0.05; startEvents:mouseenter; loop: true;dur: 300;" animation__mouseleave="property:position.y; to: 0; startEvents:mouseleave; loop: false; dur: 300;"shadow></a-entity>
+      </a-entity>
+
+      <a-entity id="sewneedle2" position="0 -0.4 0">
+        <a-entity class="button interactive" id="needlepos2" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#needle_2" circles-sphere-env-map="src:#skyMap" animation__mouseenter="property:position.y; from: 0; to:  0.05; startEvents:mouseenter; loop: true;dur: 300;" animation__mouseleave="property:position.y; to: 0; startEvents:mouseleave; loop: false; dur: 300;" shadow></a-entity>
+      </a-entity>
+
+      <a-entity id="jennywheelRotate" position="-3.55 1.374 0.542" rotation="0 0 0">
+        <a-entity class="button interactive" id="wheel_jenny" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#wheeljenny" circles-sphere-env-map="src:#skyMap" animation__mouseenter="property:rotation.x; from: 0; to: 350; startEvents:mouseenter; loop: true;dur: 1700;" animation__mouseleave="property:rotation.x; to: 0; startEvents:mouseleave; loop: false; dur: 1000;" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+
+      <a-entity id="wheelloom1Rotate" position="2.2 1.05 6.755" rotation="0 0 0">
+        <a-entity class="button interactive" id="wheel_loom_1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#wheelloom_1" circles-sphere-env-map="src:#skyMap" animation__mouseenter="property:rotation.x; from: 0; to: 350; startEvents:mouseenter; loop: true;dur: 1700;" animation__mouseleave="property:rotation.x; to: 0; startEvents:mouseleave; loop: false; dur: 1000;" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+      
+      <a-entity id="wheelloom2Rotate" position="2.2 1.05 3.092" rotation="0 0 0">
+        <a-entity class="button interactive" id="wheel_loom_2" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#wheelloom_2" circles-sphere-env-map="src:#skyMap" animation__mouseenter="property:rotation.x; from: 0; to: 350; startEvents:mouseenter; loop: true;dur: 1700;" animation__mouseleave="property:rotation.x; to: 0; startEvents:mouseleave; loop: false; dur: 1000;" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+
+      <a-entity id="wheelloom3Rotate" position="2.2 1.05 -0.911" rotation="0 0 0">
+        <a-entity class="button interactive" id="wheel_loom_3" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#wheelloom_3" circles-sphere-env-map="src:#skyMap" animation__mouseenter="property:rotation.x; from: 0; to: 350; startEvents:mouseenter; loop: true;dur: 1700;" animation__mouseleave="property:rotation.x; to: 0; startEvents:mouseleave; loop: false; dur: 1000;" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+
+      <a-entity id="wheelsewRotate" position="-5.43 2.093 -3.416" rotation="0 0 0">
+        <a-entity class="button interactive" id="wheel_sew" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#wheelsew" circles-sphere-env-map="src:#skyMap" animation__mouseenter="property:rotation.z; from: 0; to: 350; startEvents:mouseenter; loop: true; dur: 1700;" animation__mouseleave="property:rotation.z; to: 0; startEvents:mouseleave; loop: false; dur: 1000;" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+
+      <a-entity id="jennyThreads" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#jenny_thread" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
+      <a-entity id="loomfabric1" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#loom_fabric1" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
+      <a-entity id="loomfabric2" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#loom_fabric2" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
+      <a-entity id="loomfabric3" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#loom_fabric3" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
+      <a-entity id="texturedfabric1" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#textured_fabric1" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
+      <a-entity id="texturedfabric2" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#textured_fabric2" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
+
+      <!-- Industrial Office -->
+
+      <a-entity id="cabinet_1_door_L" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#cabinet1_door_l" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="cabinet_1_door_R" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#cabinet1_door_r" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="cabinet_2_door_L" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#cabinet2_door_l" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="cabinet_2_door_R" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#cabinet2_door_r" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+
+      <a-entity id="officedoor" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#office_door" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+
+      <a-entity id="telegraphbar" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#telegraph_bar" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+
+      <!--<a-entity id="key" position="0 0 0" rotation="0 0 0" scale="0.1 0.1 0.1" gltf-model="#key_door" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity> -->
+
+
+       <a-entity id="red_button" position="-1.798 4.147 -19.092" rotation="90 0 0">
+                <a-entity class="button interactive" position="0 0.6 0" geometry="primitive:cylinder; radius:0.15; height:0.2;" material="color:rgb(255, 100, 100)"
+                            animation__mouseenter="property:material.color; type:color; to:rgb(255, 0, 0); startEvents:mouseenter; dur:200"
+                            animation__mouseleave="property:material.color; type:color; to:rgb(255, 100, 100); startEvents:mouseleave; dur:200"
+                            animation__click="property:position.y; from:0.55; to:0.6; startEvents:click; dur:300" shadow></a-entity>
+                <a-entity position="0 0.3 0" geometry="primitive:box; width:0.5; depth:0.5; height:0.6;" material="color:rgb(255, 255, 255)" shadow></a-entity>
+        </a-entity> 
+
+        <a-entity id="blue_button" position="-0.798 4.147 -19.092" rotation="90 0 0">
+                <a-entity class="button interactive" position="0 0.6 0" geometry="primitive:cylinder; radius:0.15; height:0.2;" material="color:rgb(100, 100, 255)"
+                      animation__mouseenter="property:material.color; type:color; to:rgb(0, 0, 255); startEvents:mouseenter; dur:200"
+                      animation__mouseleave="property:material.color; type:color; to:rgb(100, 100, 255); startEvents:mouseleave; dur:200"
+                      animation__click="property:position.y; from:0.55; to:0.6; startEvents:click; dur:300" shadow></a-entity>
+                <a-entity position="0 0.3 0" geometry="primitive:box; width:0.5; depth:0.5; height:0.6;" material="color:rgb(255, 255, 255)" shadow></a-entity>
+        </a-entity> 
+
+        <a-entity id="green_button" position="-2.798 4.147 -19.092" rotation="90 0 0">
+                <a-entity class="button interactive" position="0 0.6 0" geometry="primitive:cylinder; radius:0.15; height:0.2;" material="color:rgb(100, 255, 100)"
+                      animation__mouseenter="property:material.color; type:color; to:rgb(0, 255, 0); startEvents:mouseenter; dur:200"
+                      animation__mouseleave="property:material.color; type:color; to:rgb(100, 255, 100); startEvents:mouseleave; dur:200"
+                      animation__click="property:position.y; from:0.55; to:0.6; startEvents:click; dur:300" shadow></a-entity>
+                <a-entity position="0 0.3 0" geometry="primitive:box; width:0.5; depth:0.5; height:0.6;" material="color:rgb(255, 255, 255)" shadow></a-entity>
+        </a-entity> 
+      
+
+
+      <!-- ------------- -->
+      <a-entity circles-checkpoint position="1.499 0.5 0.300"></a-entity>
+      <a-entity circles-checkpoint position="2.076 0.5 -3.907"></a-entity>
+      <a-entity circles-checkpoint position="1.508 0.5 4.662"></a-entity>
+      <a-entity circles-checkpoint position="-2.251 0.5 4.888"></a-entity>
+      <a-entity circles-checkpoint position="-2.400 0.5 0.465"></a-entity>
+      <a-entity circles-checkpoint position="-3.352 0.5 -3.609"></a-entity>
+      
+      <a-entity circles-checkpoint position="-3.922 2.649 -8.116"></a-entity>
+      <a-entity circles-checkpoint position="3.302 2.659 -8.083"></a-entity>
+
+      <a-entity circles-checkpoint position="2.220 2.649 -12.409"></a-entity>
+      <a-entity circles-checkpoint position="-2.709 2.659 -12.109"></a-entity>
+      <a-entity circles-checkpoint position="1.119 2.659 -15.906"></a-entity>
+
+      <a-entity id="navmesh" position="0 -0.4 0" gltf-model="#navmesh_gltf" visible='false' nav-mesh></a-entity>
+
+      <a-entity id="sunlight" position="0 20 0" rotation="40 0 0" 
+                light="type:directional; intensity:3; color:#d5e4f5; castShadow:false;"></a-entity>
+      <a-entity light="type:hemisphere; color:#FFFFFF; groundColor:#BCE2F4; intensity:3.0"></a-entity>
+
+      <a-entity id='skyBox'
+                rotation='0 200 0'
+                geometry='primitive:sphere; radius:50; segments-height:24; segments-width:24;'
+                material='shader:flat; src:#skyMap; side:back;'>
+      </a-entity>
+    </a-scene>
+
+    <circles-end-scripts/>
+
+    <script>
+      let threads = 0;
+      let completeFabric = 0;
+
+      const spinningJenny = document.getElementById('wheel_jenny');
+      const powerloom1 = document.getElementById('wheel_loom_1');
+      const powerloom2 = document.getElementById('wheel_loom_2');
+      const powerloom3 = document.getElementById('wheel_loom_3');
+      const singerneedle1 = document.getElementById('needlepos1');
+      const singerneedle2 = document.getElementById('needlepos2');
+
+      const threadsJenny = document.getElementById('jennyThreads');
+      const fabric1 = document.getElementById('loomfabric1');
+      const fabric2 = document.getElementById('loomfabric2');
+      const fabric3 = document.getElementById('loomfabric3');
+      const texturedfab1 = document.getElementById('texturedfabric1');
+      const texturedfab2 = document.getElementById('texturedfabric2');
+
+      spinningJenny.addEventListener('click', function() {
+        threads++;
+        threadsJenny.setAttribute('visible', true)
+      });
+
+      powerloom1.addEventListener('click', function() {
+        let pressloom1 = true;
+        completeFabric++;
+
+        if (threads > 0 && pressloom1 === true) {
+          fabric1.setAttribute('visible', true)
+          threads = threads - 1;
+          pressloom1 = false;
+        }
+      });
+
+      powerloom2.addEventListener('click', function() {
+        let pressloom2 = true;
+        completeFabric++;
+
+        if (threads > 0 && pressloom2 === true) {
+          fabric2.setAttribute('visible', true)
+          threads = threads - 1;
+          pressloom2 = false;
+        }
+      });
+
+      powerloom3.addEventListener('click', function() {
+        let pressloom3 = true;
+        completeFabric++;
+
+        if (threads > 0 && pressloom3 === true) {
+          fabric3.setAttribute('visible', true)
+          threads = threads - 1;
+          pressloom3 = false;
+        }
+      });
+
+      singerneedle1.addEventListener('click', function() {
+        let needle1 = true;
+
+        if (completeFabric > 0 && needle1 === true) {
+          texturedfab2.setAttribute('visible', true)
+          completeFabric = completeFabric - 1;
+          needle1 = false;
+        }
+      });
+
+      singerneedle2.addEventListener('click', function() {
+        let needle2 = true;
+
+        if (completeFabric > 0 && needle2 === true) {
+          texturedfab1.setAttribute('visible', true)
+          completeFabric = completeFabric - 1;
+          needle2 = false;
+        }
+      });
+
+  </script>
+
+  </body>
+</html>
