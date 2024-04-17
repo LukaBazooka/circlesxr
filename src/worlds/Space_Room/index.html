@@ -3,6 +3,30 @@
     <meta charset="utf-8">
 
     <circles-start-scripts/>
+<style>
+    .keyboard-base {
+      background-color: #333;
+      border-radius: 5px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .key {
+      background-color: #FFF;
+      border-radius: 3px;
+      box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    .key:active, .key:hover {
+      background-color: #DDD;
+      box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    .key-label {
+      color: #000;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    </style>
 
   </head>
   <body>
@@ -49,12 +73,16 @@
         <a-asset-item id='lem_model' src='assets/models/LEM.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
         <a-asset-item id="navmesh_gltf" src="assets/models/floor.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <img id='screen' src='assets/instructions.jpg' crossorigin="anonymous">
+        <img id='screen2' src='assets/computer_screen.jpg' crossorigin="anonymous">
         <circles-assets/>
       </a-assets>
 
       <circles-manager-avatar/>
 
       <a-entity id="game_manager" lights-interactive></a-entity>
+      <a-image id="instructions" src="#screen" position="-7 5.4 -4" scale="3 3 3" rotation="0 40 0" visible="true"></a-image>
+      <a-image id="computer" src="#screen2" position="0 2 7" scale="0.8 0.8 0.8" rotation="0 180 0" visible="true"></a-image>
 
       <!-- ambient music/sound -->
       <a-entity position="0 0 0" circles-sound="type:music; src:#magic_music; autoplay:true; loop:true; volume:0.02;"></a-entity>
@@ -182,6 +210,42 @@
                 material='shader:flat; src:#skyMap; side:back;'>
       </a-entity>
 
+      <!-- keyboard -->
+
+<a-entity position="1 1 -4">
+  <a-box width="2.5" height="0.1" depth="1" color="gray"></a-box>
+
+  <!-- Button 1 -->
+  <a-entity position="-0.75 0.05 0" rotation="90 0 0" cursor-listener>
+    <a-box width="0.3" height="0.3" depth="0.1" color="gray"></a-box>
+    <a-text value="1" position="-0.07 0.5 0.05" rotation="-90 0 0" color="white"></a-text>
+  </a-entity>
+
+  <!-- Button 2 -->
+  <a-entity position="-0.25 0.05 0" rotation="90 0 0" cursor-listener>
+    <a-box width="0.3" height="0.3" depth="0.1" color="gray"></a-box>
+    <a-text value="2" position="-0.07 0.5 0.05" rotation="-90 0 0" color="white"></a-text>
+  </a-entity>
+
+  <!-- Button 3 -->
+  <a-entity position="0.25 0.05 0" rotation="90 0 0" cursor-listener>
+    <a-box width="0.3" height="0.3" depth="0.1" color="gray"></a-box>
+    <a-text value="3" position="-0.07 0.5 0.05" rotation="-90 0 0" color="white"></a-text>
+  </a-entity>
+
+  <!-- Button 4 -->
+  <a-entity position="0.65 0.05 0" rotation="90 0 0" cursor-listener>
+    <a-box width="0.3" height="0.3" depth="0.1" color="gray"></a-box>
+    <a-text value="4" position="-0.07 0.5 0.05" rotation="-90 0 0" color="white"></a-text>
+  </a-entity>
+
+  <!-- Button 5 -->
+  <a-entity position="1 0.05 0" rotation="90 0 0" cursor-listener>
+    <a-box width="0.3" height="0.3" depth="0.1" color="gray"></a-box>
+    <a-text value="5" position="-0.07 0.50 0.05" rotation="-90 0 0" color="white"></a-text>
+  </a-entity>
+</a-entity>
+
     </a-scene>
 
     <circles-end-scripts/>
@@ -230,86 +294,143 @@
       let cableMatchL1 = false, cableMatchL2 = false, cableMatchL3 = false;
       let cableMatchR1 = false, cableMatchR2 = false, cableMatchR3 = false;
 
+      function checkOrderLeft() {
+        if (cableMatchL1 === true) {
+          cableL1.setAttribute('visible', true);
+          console.log("cableL1 displayed");
+          if(cableMatchL2 === true) {
+            cableL2.setAttribute('visible', true);
+            console.log("cableL2 displayed");
+            if(cableMatchL3 === true) {
+              cableL3.setAttribute('visible', true);
+              console.log("cableL3 displayed");
+            }
+          }
+        }
+      }
 
-      function checkMatch() {
+      function checkOrderRight() {
+        if (cableMatchR1 === true) {
+          cableR1.setAttribute('visible', true);
+          console.log("cableR1 displayed");
+          if(cableMatchR2 === true) {
+            cableR2.setAttribute('visible', true);
+            console.log("cableR2 displayed");
+            if(cableMatchR3 === true) {
+              cableR3.setAttribute('visible', true);
+              console.log("cableR3 displayed");
+            }
+          }
+        }
+      }
 
+      function checkMatchL1() {
+        if (server_l1  === true && comp_l1 === true) {
+          cableMatchL1 = true;
+          checkOrderLeft();
+          console.log("cableL1 matched");
+        }
+      }
+      function checkMatchL2() {
+        if (server_l2  === true && comp_l2 === true) {
+          cableMatchL2 = true;
+          checkOrderLeft();
+          console.log("cableL2 matched");
+        }
+      }
+      function checkMatchL3() {
+        if (server_l3  === true && comp_l3 === true) {
+          cableMatchL3 = true;
+          checkOrderLeft();
+          console.log("cableL3 matched");
+        }
+      }
+
+      function checkMatchR1() {
+        if (server_r1  === true && comp_r1 === true) {
+          cableMatchR1 = true;
+          checkOrderRight();
+          console.log("cableR1 matched");
+        }
+      }
+      function checkMatchR2() {
+        if (server_r2  === true && comp_r2 === true) {
+          cableMatchR2 = true;
+          checkOrderRight();
+          console.log("cableR2 matched");
+        }
+      }
+      function checkMatchR3() {
+        if (server_r3  === true && comp_r3 === true) {
+          cableMatchR3 = true;
+          checkOrderRight();
+          console.log("cableR3 matched");
+        }
       }
 
 
       serverL1.addEventListener('click', function() {
         server_l1 = true;
+        checkMatchL1();
+        console.log("serverl1 clicked");
       });
       serverL2.addEventListener('click', function() {
         server_l2 = true;
+        checkMatchL2();
+        console.log("serverl2 clicked");
       });
       serverL3.addEventListener('click', function() {
         server_l3 = true;
+        checkMatchL3();
+        console.log("serverl3 clicked");
       });
 
       serverR1.addEventListener('click', function() {
         server_r1 = true;
+        checkMatchR1();
+        console.log("serverr1 clicked");
       });
       serverR2.addEventListener('click', function() {
         server_r2 = true;
+        checkMatchR2();
+        console.log("serverr2 clicked");
       });
       serverR3.addEventListener('click', function() {
         server_r3 = true;
+        checkMatchR3();
+        console.log("serverr3 clicked");
       });
 
-
-      powerloom1.addEventListener('click', function() {
-        let pressloom1 = true;
-        completeFabric++;
-
-        if (threads > 0 && pressloom1 === true) {
-          fabric1.setAttribute('visible', true)
-          threads = threads - 1;
-          pressloom1 = false;
-        }
+      compL1.addEventListener('click', function() {
+        comp_l1 = true;
+        checkMatchL1();
+        console.log("compl1 clicked");
       });
-
-      powerloom2.addEventListener('click', function() {
-        let pressloom2 = true;
-        completeFabric++;
-
-        if (threads > 0 && pressloom2 === true) {
-          fabric2.setAttribute('visible', true)
-          threads = threads - 1;
-          pressloom2 = false;
-        }
+      compL2.addEventListener('click', function() {
+        comp_l2 = true;
+        checkMatchL2();
+        console.log("compl2 clicked");
       });
-
-      powerloom3.addEventListener('click', function() {
-        let pressloom3 = true;
-        completeFabric++;
-
-        if (threads > 0 && pressloom3 === true) {
-          fabric3.setAttribute('visible', true)
-          threads = threads - 1;
-          pressloom3 = false;
-        }
+      compL3.addEventListener('click', function() {
+        comp_l3 = true;
+        checkMatchL3();
+        console.log("compl3 clicked");
       });
-
-      singerneedle1.addEventListener('click', function() {
-        let needle1 = true;
-
-        if (completeFabric > 0 && needle1 === true) {
-          texturedfab2.setAttribute('visible', true)
-          completeFabric = completeFabric - 1;
-          needle1 = false;
-        }
+      compR1.addEventListener('click', function() {
+        comp_r1 = true;
+        checkMatchR1();
+        console.log("compr1 clicked");
       });
-
-      singerneedle2.addEventListener('click', function() {
-        let needle2 = true;
-
-        if (completeFabric > 0 && needle2 === true) {
-          texturedfab1.setAttribute('visible', true)
-          completeFabric = completeFabric - 1;
-          needle2 = false;
-        }
+      compR2.addEventListener('click', function() {
+        comp_r2 = true;
+        checkMatchR2();
+        console.log("compr2 clicked");
       });
-
+      compR3.addEventListener('click', function() {
+        comp_r3 = true;
+        checkMatchR3();
+        console.log("compr3 clicked");
+      });
   </script>
   </body>
 </html>
