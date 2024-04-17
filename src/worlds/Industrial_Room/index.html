@@ -252,6 +252,10 @@
                 <a-entity position="0 0.3 0" geometry="primitive:box; width:0.5; depth:0.5; height:0.6;" material="color:rgb(255, 255, 255)" shadow></a-entity>
         </a-entity> 
 
+        <a-entity id="light1" position="-2.151 5.5 -19.092" rotation="90 0 0" geometry="primitive:cylinder; radius:0.15; height:0.2;" material="color:rgb(0, 0, 0)"></a-entity>
+        <a-entity id="light2" position="-1.798 5.5 -19.092" rotation="90 0 0" geometry="primitive:cylinder; radius:0.15; height:0.2;" material="color:rgb(0, 0, 0)"></a-entity>
+        <a-entity id="light3" position="-1.454 5.5 -19.092" rotation="90 0 0" geometry="primitive:cylinder; radius:0.15; height:0.2;" material="color:rgb(0, 0, 0)"></a-entity>
+
         <a-entity id="Portal-SpaceRoom"
                 position="-10.271 3.567 -13.549" rotation="0 0 0"
                 circles-portal="img_src:/global/assets/textures/equirectangular/WhiteBlue.jpg; title_text:Space Room; link_url:/w/Space_Room"
@@ -316,6 +320,58 @@
         if (elementsArray.length < 3) {
             elementsArray.push(element);
             console.log('Element added:', element);
+
+            if(elementsArray[0] === "Green") {
+              const light1Entity = document.querySelector('#light1');
+              light1Entity.setAttribute('material', 'color', 'rgb(0, 255, 0)');
+            }
+            else if(elementsArray[0] === "Blue") {
+              const light1Entity = document.querySelector('#light1');
+              light1Entity.setAttribute('material', 'color', 'rgb(0, 0, 255)');
+            }
+            else if(elementsArray[0] === "Red") {
+              const light1Entity = document.querySelector('#light1');
+              light1Entity.setAttribute('material', 'color', 'rgb(255, 0, 0)');
+            }
+            else {
+              const light1Entity = document.querySelector('#light1');
+              light1Entity.setAttribute('material', 'color', 'rgb(0, 0, 0)');
+            }
+
+            if(elementsArray[1] === "Green") {
+              const light2Entity = document.querySelector('#light2');
+              light2Entity.setAttribute('material', 'color', 'rgb(0, 255, 0)');
+            }
+            else if(elementsArray[1] === "Blue") {
+              const light2Entity = document.querySelector('#light2');
+              light2Entity.setAttribute('material', 'color', 'rgb(0, 0, 255)');
+            }
+            else if(elementsArray[1] === "Red") {
+              const light2Entity = document.querySelector('#light2');
+              light2Entity.setAttribute('material', 'color', 'rgb(255, 0, 0)');
+            }
+            else {
+              const light2Entity = document.querySelector('#light2');
+              light2Entity.setAttribute('material', 'color', 'rgb(0, 0, 0)');
+            }
+
+            if(elementsArray[2] === "Green") {
+              const light3Entity = document.querySelector('#light3');
+              light3Entity.setAttribute('material', 'color', 'rgb(0, 255, 0)');
+            }
+            else if(elementsArray[2] === "Blue") {
+              const light3Entity = document.querySelector('#light3');
+              light3Entity.setAttribute('material', 'color', 'rgb(0, 0, 255)');
+            }
+            else if(elementsArray[2] === "Red") {
+              const light3Entity = document.querySelector('#light3');
+              light3Entity.setAttribute('material', 'color', 'rgb(255, 0, 0)');
+            }
+            else {
+              const light3Entity = document.querySelector('#light3');
+              light3Entity.setAttribute('material', 'color', 'rgb(0, 0, 0)');
+            }
+
             if(checkSequence()) {
               console.log("sequence matched!");
 
@@ -329,6 +385,57 @@
             elementsArray = []; // Clear all elements
             elementsArray.push(element);
             console.log('Element added:', element);
+
+            if(elementsArray[0] === "Green") {
+              const light1Entity = document.querySelector('#light1');
+              light1Entity.setAttribute('material', 'color', 'rgb(0, 255, 0)');
+            }
+            else if(elementsArray[0] === "Blue") {
+              const light1Entity = document.querySelector('#light1');
+              light1Entity.setAttribute('material', 'color', 'rgb(0, 0, 255)');
+            }
+            else if(elementsArray[0] === "Red") {
+              const light1Entity = document.querySelector('#light1');
+              light1Entity.setAttribute('material', 'color', 'rgb(255, 0, 0)');
+            }
+            else {
+              const light1Entity = document.querySelector('#light1');
+              light1Entity.setAttribute('material', 'color', 'rgb(0, 0, 0)');
+            }
+
+            if(elementsArray[1] === "Green") {
+              const light2Entity = document.querySelector('#light2');
+              light2Entity.setAttribute('material', 'color', 'rgb(0, 255, 0)');
+            }
+            else if(elementsArray[1] === "Blue") {
+              const light2Entity = document.querySelector('#light2');
+              light2Entity.setAttribute('material', 'color', 'rgb(0, 0, 255)');
+            }
+            else if(elementsArray[1] === "Red") {
+              const light2Entity = document.querySelector('#light2');
+              light2Entity.setAttribute('material', 'color', 'rgb(255, 0, 0)');
+            }
+            else {
+              const light2Entity = document.querySelector('#light2');
+              light2Entity.setAttribute('material', 'color', 'rgb(0, 0, 0)');
+            }
+
+            if(elementsArray[2] === "Green") {
+              const light3Entity = document.querySelector('#light3');
+              light3Entity.setAttribute('material', 'color', 'rgb(0, 255, 0)');
+            }
+            else if(elementsArray[2] === "Blue") {
+              const light3Entity = document.querySelector('#light3');
+              light3Entity.setAttribute('material', 'color', 'rgb(0, 0, 255)');
+            }
+            else if(elementsArray[2] === "Red") {
+              const light3Entity = document.querySelector('#light3');
+              light3Entity.setAttribute('material', 'color', 'rgb(255, 0, 0)');
+            }
+            else {
+              const light3Entity = document.querySelector('#light3');
+              light3Entity.setAttribute('material', 'color', 'rgb(0, 0, 0)');
+            }
         }
       }
 
