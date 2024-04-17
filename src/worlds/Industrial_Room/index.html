@@ -56,6 +56,13 @@
         <a-asset-item id='telegraph_bar' src='assets\models\industrail\office\telegraph-bar.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
         <a-asset-item id="navmesh_gltf" src="assets/models/floor.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <audio id="Narr_note1-snd" src="worlds/Industrial_Room/assets/audio/note1.mp3" preload="true"></audio>
+        <audio id="note2" src="assets/audio/note2.wav" preload="true"></audio>
+        <audio id="note3" src="assets/audio/note3.wav" preload="true"></audio>
+
+        <audio id="key" src="assets/audio/key.wav" preload="true"></audio>
+
         <circles-assets/>
       </a-assets>
 
@@ -79,7 +86,8 @@
                                   description_back: An old newspaper note, you cant tell from when it's from.;
                                   description_offset:0 0.5 0;
                                   desc_arrow_position:down;
-                                  label_text: Old Newspaper;"
+                                  label_text: Old Newspaper;
+                                  audio:#Narr_note1-snd; volume:1;"
                 circles-pickup-networked></a-entity> 
 
       <a-entity id="note2"
