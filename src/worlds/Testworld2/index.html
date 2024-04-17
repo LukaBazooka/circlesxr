@@ -20,6 +20,12 @@
         <a-asset-item id='doubledoor_right' src='assets\models\doors\doubleDoor-right.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='singledoor_metal' src='assets\models\doors\singleDoor-metal.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='singledoor_wood' src='assets\models\doors\singleDoor-wood.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="clock" src="assets/models/clock.glb"response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="lenwood" src="assets/models/lenwood.glb"response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="sweing" src="assets/models/sweing.glb"response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+
+        
 
         <a-asset-item id="navmesh_gltf" src="assets/models/lab-floor.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
@@ -79,6 +85,45 @@
                 <a-entity position="0 0.3 0" geometry="primitive:box; width:0.5; depth:0.5; height:0.6;" material="color:rgb(255, 255, 255)" shadow></a-entity>
         </a-entity> -->
 
+     
+<a-cylinder id="newStand"
+            position="0.699 0.402 9.048"
+            rotation="0 0 0"
+            scale="0.262 0.842 0.262"
+            color="#565656" 
+            shadow>
+</a-cylinder>
+
+<!-- Lenwood on the newStand -->
+<a-entity id="lenwoodArtifact"
+          gltf-model="#lenwood"
+          position="3.300 0.388 " 
+          rotation="3.702 -1.52 11.346"
+          scale="0.370 0.370 0.370"  
+          visible="true"> <!-- Set visibility to false initially -->
+</a-entity>
+
+<!-- Sweing on its own stand -->
+<a-entity id="sweingArtifact"
+          gltf-model="#sweing"
+          position="-1.76 -0.41 6.952" 
+          scale="0.734 0.734 0.734"  
+          visible="true"> <!-- Set visibility to false initially -->
+</a-entity>
+
+
+<!-- Stand for sweing -->
+<a-cylinder id="sweingStand"
+            position="-0.398 0.425 9.089"  
+            rotation="0 0 0"
+            scale="0.262 0.842 0.262"  
+            color="#565656"  
+            shadow>
+</a-cylinder>
+
+
+
+
       <!-- Ingenium lab  -->
 
       <a-entity id="ingeniumlab" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#labenvironmentmodel" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
@@ -89,6 +134,9 @@
       <a-entity id="woodendoor" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#singledoor_wood" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       <a-entity id="woodendoor" position="-1.15 0 -2.623" rotation="0 -180 0" scale="1 1 1" gltf-model="#singledoor_wood" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       <a-entity id="woodendoor" position="0 0 -4.819" rotation="0 0 0" scale="1 1 1" gltf-model="#singledoor_wood" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="Portal-Testworld2"
+      
+      ></a-entity>
 
 
       <!-- ------------- -->
@@ -112,6 +160,58 @@
       </a-entity>
     </a-scene>
 
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Listen for click event on the portal that indicates a return from space
+        document.querySelector('#Portal-Testworld2').addEventListener('click', () => {
+          console.log("Portal to Testworld2 clicked");
+          sessionStorage.setItem('returnFromSpace', 'true');
+        });
+    
+        // Show artifacts if conditions are met
+        function showArtifacts() {
+          
+          const lenwood = document.querySelector('#lenwoodArtifact');
+          const sweing = document.querySelector('#sweingArtifact');
+    
+          
+          const lenwoodCollected = sessionStorage.getItem('lenwoodCollected') === 'true';
+          const sweingCollected = sessionStorage.getItem('sweingCollected') === 'true';
+          const returnedFromSpace = sessionStorage.getItem('returnFromSpace') === 'true';
+    
+          console.log('Artifacts collected:', clockCollected, lenwoodCollected, sweingCollected, 'Returned from space:', returnedFromSpace);
+    
+        
+          if (lenwoodCollected && returnedFromSpace) {
+            console.log('Showing lenwood');
+            lenwood.setAttribute('visible', 'true');
+          }
+          if (sweingCollected && returnedFromSpace) {
+            console.log('Showing sweing');
+            sweing.setAttribute('visible', 'true');
+          }
+        }
+    
+        
+        function collectLenwood() {
+          sessionStorage.setItem('lenwoodCollected', 'true');
+        }
+        function collectSweing() {
+          sessionStorage.setItem('sweingCollected', 'true');
+        }
+    
+        // Debugging: Call the collect functions to simulate the artifacts being collected
+        c
+        collectLenwood();
+        collectSweing();
+    
+        // When the window loads, check if the artifacts should be shown
+        window.addEventListener('load', showArtifacts);
+      });
+    </script>
+    
+    
+  
     <circles-end-scripts/>
   </body>
 </html>
