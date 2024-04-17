@@ -3,6 +3,30 @@
     <meta charset="utf-8">
 
     <circles-start-scripts/>
+<style>
+    .keyboard-base {
+      background-color: #333;
+      border-radius: 5px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .key {
+      background-color: #FFF;
+      border-radius: 3px;
+      box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    .key:active, .key:hover {
+      background-color: #DDD;
+      box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    .key-label {
+      color: #000;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    </style>
 
   </head>
   <body>
@@ -49,12 +73,16 @@
         <a-asset-item id='lem_model' src='assets/models/LEM.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
         <a-asset-item id="navmesh_gltf" src="assets/models/floor.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <img id='screen' src='assets/instructions.jpg' crossorigin="anonymous">
+        <img id='screen2' src='assets/computer_screen.jpg' crossorigin="anonymous">
         <circles-assets/>
       </a-assets>
 
       <circles-manager-avatar/>
 
       <a-entity id="game_manager" lights-interactive></a-entity>
+      <a-image id="instructions" src="#screen" position="-7 5.4 -4" scale="3 3 3" rotation="0 40 0" visible="true"></a-image>
+      <a-image id="computer" src="#screen2" position="0 2 7" scale="0.8 0.8 0.8" rotation="0 180 0" visible="true"></a-image>
 
       <!-- ambient music/sound -->
       <a-entity position="0 0 0" circles-sound="type:music; src:#magic_music; autoplay:true; loop:true; volume:0.02;"></a-entity>
@@ -181,6 +209,42 @@
                 geometry='primitive:sphere; radius:50; segments-height:24; segments-width:24;'
                 material='shader:flat; src:#skyMap; side:back;'>
       </a-entity>
+
+      <!-- keyboard -->
+
+<a-entity position="1 1 -4">
+  <a-box width="2.5" height="0.1" depth="1" color="gray"></a-box>
+
+  <!-- Button 1 -->
+  <a-entity position="-0.75 0.05 0" rotation="90 0 0" cursor-listener>
+    <a-box width="0.3" height="0.3" depth="0.1" color="gray"></a-box>
+    <a-text value="1" position="-0.07 0.5 0.05" rotation="-90 0 0" color="white"></a-text>
+  </a-entity>
+
+  <!-- Button 2 -->
+  <a-entity position="-0.25 0.05 0" rotation="90 0 0" cursor-listener>
+    <a-box width="0.3" height="0.3" depth="0.1" color="gray"></a-box>
+    <a-text value="2" position="-0.07 0.5 0.05" rotation="-90 0 0" color="white"></a-text>
+  </a-entity>
+
+  <!-- Button 3 -->
+  <a-entity position="0.25 0.05 0" rotation="90 0 0" cursor-listener>
+    <a-box width="0.3" height="0.3" depth="0.1" color="gray"></a-box>
+    <a-text value="3" position="-0.07 0.5 0.05" rotation="-90 0 0" color="white"></a-text>
+  </a-entity>
+
+  <!-- Button 4 -->
+  <a-entity position="0.65 0.05 0" rotation="90 0 0" cursor-listener>
+    <a-box width="0.3" height="0.3" depth="0.1" color="gray"></a-box>
+    <a-text value="4" position="-0.07 0.5 0.05" rotation="-90 0 0" color="white"></a-text>
+  </a-entity>
+
+  <!-- Button 5 -->
+  <a-entity position="1 0.05 0" rotation="90 0 0" cursor-listener>
+    <a-box width="0.3" height="0.3" depth="0.1" color="gray"></a-box>
+    <a-text value="5" position="-0.07 0.50 0.05" rotation="-90 0 0" color="white"></a-text>
+  </a-entity>
+</a-entity>
 
     </a-scene>
 
