@@ -212,39 +212,35 @@
 
       <!-- keyboard -->
 
-<a-entity position="1 1 -4">
-  <a-box width="2.5" height="0.1" depth="1" color="gray"></a-box>
-
-  <!-- Button 1 -->
-  <a-entity position="-0.75 0.05 0" rotation="90 0 0" cursor-listener>
-    <a-box width="0.3" height="0.3" depth="0.1" color="gray"></a-box>
-    <a-text value="1" position="-0.07 0.5 0.05" rotation="-90 0 0" color="white"></a-text>
-  </a-entity>
+<<a-entity position="1 1 -4">
+  <a-box position="0.2 0 0" width="2.5" height="0.05" depth="1" color="#333"></a-box>
+  <!-- Define Button 1 -->
+  <a-box class="interactive-key" position="-0.75 0.05 0" width="0.3" height="0.05" depth="0.1" color="gray">
+    <a-text value="1"  position="0 0.08 0.06" rotation="0 0 0" width="4" color="white"></a-text>
+  </a-box>
 
   <!-- Button 2 -->
-  <a-entity position="-0.25 0.05 0" rotation="90 0 0" cursor-listener>
-    <a-box width="0.3" height="0.3" depth="0.1" color="gray"></a-box>
-    <a-text value="2" position="-0.07 0.5 0.05" rotation="-90 0 0" color="white"></a-text>
-  </a-entity>
+  <a-box class="interactive-key" position="-0.25 0.05 0" width="0.3" height="0.05" depth="0.1" color="gray">
+    <a-text value="2" position="0 0.08 0.06" rotation="0 0 0" width="4" color="white"></a-text>
+  </a-box>
 
   <!-- Button 3 -->
-  <a-entity position="0.25 0.05 0" rotation="90 0 0" cursor-listener>
-    <a-box width="0.3" height="0.3" depth="0.1" color="gray"></a-box>
-    <a-text value="3" position="-0.07 0.5 0.05" rotation="-90 0 0" color="white"></a-text>
-  </a-entity>
+  <a-box class="interactive-key" position="0.25 0.05 0" width="0.3" height="0.05" depth="0.1" color="gray">
+    <a-text value="3" position="0 0.08 0.06" rotation="0 0 0" width="4" color="white"></a-text>
+  </a-box>
+
 
   <!-- Button 4 -->
-  <a-entity position="0.65 0.05 0" rotation="90 0 0" cursor-listener>
-    <a-box width="0.3" height="0.3" depth="0.1" color="gray"></a-box>
-    <a-text value="4" position="-0.07 0.5 0.05" rotation="-90 0 0" color="white"></a-text>
-  </a-entity>
+  <a-box class="interactive-key" position="0.75 0.05 0" width="0.3" height="0.05" depth="0.1" color="gray">
+    <a-text value="4" position="0 0.08 0.06" rotation="0 0 0" width="4" color="white"></a-text>
+  </a-box>
+
 
   <!-- Button 5 -->
-  <a-entity position="1 0.05 0" rotation="90 0 0" cursor-listener>
-    <a-box width="0.3" height="0.3" depth="0.1" color="gray"></a-box>
-    <a-text value="5" position="-0.07 0.50 0.05" rotation="-90 0 0" color="white"></a-text>
-  </a-entity>
-</a-entity>
+  <a-box class="interactive-key" position="1.15 0.05 0" width="0.3" height="0.05" depth="0.1" color="gray">
+    <a-text value="5" position="0 0.08 0.06" rotation="0 0 0" width="4" color="white"></a-text>
+  </a-box>
+
 
     </a-scene>
 
@@ -428,6 +424,25 @@
         checkMatchR3();
         console.log("compr3 clicked");
       });
+
+
+
+      AFRAME.registerComponent('interactive-key', {
+    init: function() {
+      this.el.addEventListener('mousedown', function(evt) {
+        this.setAttribute('material', 'color', '#333');
+      });
+      this.el.addEventListener('mouseup', function(evt) {
+        this.setAttribute('material', 'color', 'gray');
+      });
+      this.el.addEventListener('mouseenter', function(evt) {
+        this.setAttribute('material', 'color', '#ccc');
+      });
+      this.el.addEventListener('mouseleave', function(evt) {
+        this.setAttribute('material', 'color', 'gray');
+      });
+    }
+  });
   </script>
   </body>
 </html>
