@@ -97,8 +97,8 @@
 <!-- Lenwood on the newStand -->
 <a-entity id="lenwoodArtifact"
           gltf-model="#lenwood"
-          position="3.300 0.388 " 
-          rotation="3.702 -1.52 11.346"
+          position="3.300 0.390 8.064 " 
+          rotation="3.702 -1.520 11.346"
           scale="0.370 0.370 0.370"  
           visible="true"> <!-- Set visibility to false initially -->
 </a-entity>
@@ -162,52 +162,54 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        // Listen for click event on the portal that indicates a return from space
-        document.querySelector('#Portal-Testworld2').addEventListener('click', () => {
-          console.log("Portal to Testworld2 clicked");
-          sessionStorage.setItem('returnFromSpace', 'true');
-        });
-    
-        // Show artifacts if conditions are met
-        function showArtifacts() {
-          
-          const lenwood = document.querySelector('#lenwoodArtifact');
-          const sweing = document.querySelector('#sweingArtifact');
-    
-          
-          const lenwoodCollected = sessionStorage.getItem('lenwoodCollected') === 'true';
-          const sweingCollected = sessionStorage.getItem('sweingCollected') === 'true';
-          const returnedFromSpace = sessionStorage.getItem('returnFromSpace') === 'true';
-    
-          console.log('Artifacts collected:', clockCollected, lenwoodCollected, sweingCollected, 'Returned from space:', returnedFromSpace);
-    
-        
-          if (lenwoodCollected && returnedFromSpace) {
-            console.log('Showing lenwood');
+    // Listen for click event on the portal that indicates a return from space
+    document.querySelector('#Portal-Testworld2').addEventListener('click', () => {
+        console.log("Portal to Testworld2 clicked");
+        sessionStorage.setItem('returnFromSpace', 'true');
+        // When returning from the space room, show the artifacts if conditions are met
+        showArtifacts();
+    });
+
+    // Function to show artifacts if conditions are met
+    function showArtifacts() {
+        const lenwood = document.querySelector('#lenwoodArtifact');
+        const sweing = document.querySelector('#sweingArtifact');
+
+        const lenwoodCollected = sessionStorage.getItem('lenwoodCollected') === 'true';
+        const sweingCollected = sessionStorage.getItem('sweingCollected') === 'true';
+        const returnedFromSpace = sessionStorage.getItem('returnFromSpace') === 'true';
+
+        console.log('Artifacts collected:', lenwoodCollected, sweingCollected, 'Returned from space:', returnedFromSpace);
+
+        // Show Lenwood and Sweing artifacts if they are collected and the player has returned from space
+        if (lenwoodCollected && returnedFromSpace) {
+            console.log('Showing Lenwood');
             lenwood.setAttribute('visible', 'true');
-          }
-          if (sweingCollected && returnedFromSpace) {
-            console.log('Showing sweing');
+        }
+        if (sweingCollected && returnedFromSpace) {
+            console.log('Showing Sweing');
             sweing.setAttribute('visible', 'true');
-          }
         }
-    
-        
-        function collectLenwood() {
-          sessionStorage.setItem('lenwoodCollected', 'true');
-        }
-        function collectSweing() {
-          sessionStorage.setItem('sweingCollected', 'true');
-        }
-    
-        // Debugging: Call the collect functions to simulate the artifacts being collected
-        c
-        collectLenwood();
-        collectSweing();
-    
-        // When the window loads, check if the artifacts should be shown
-        window.addEventListener('load', showArtifacts);
-      });
+    }
+
+    // Function to simulate collecting Lenwood artifact
+    function collectLenwood() {
+        sessionStorage.setItem('lenwoodCollected', 'true');
+    }
+
+    // Function to simulate collecting Sweing artifact
+    function collectSweing() {
+        sessionStorage.setItem('sweingCollected', 'true');
+    }
+
+    // Debugging: Call the collect functions to simulate the artifacts being collected
+    collectLenwood();
+    collectSweing();
+
+    // When the window loads, check if the artifacts should be shown
+    window.addEventListener('load', showArtifacts);
+});
+
     </script>
     
     
