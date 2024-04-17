@@ -75,14 +75,16 @@
         <a-asset-item id="navmesh_gltf" src="assets/models/floor.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <img id='screen' src='assets/instructions.jpg' crossorigin="anonymous">
         <img id='screen2' src='assets/computer_screen.jpg' crossorigin="anonymous">
+        <img id='note' src='assets/printernote.jpg' crossorigin="anonymous">
         <circles-assets/>
       </a-assets>
 
       <circles-manager-avatar/>
 
       <a-entity id="game_manager" lights-interactive></a-entity>
-      <a-image id="instructions" src="#screen" position="-7 5.4 -4" scale="3 3 3" rotation="0 40 0" visible="true"></a-image>
+      <a-image id="instructions" src="#screen" position="-0.166 3.083 1.625" scale="1.948 1.948 1.948" rotation="0 169.257 0" visible="true"></a-image>
       <a-image id="computer" src="#screen2" position="0 2 7" scale="0.8 0.8 0.8" rotation="0 180 0" visible="true"></a-image>
+      <a-image id="printer" src="#note" position="7.014 2.017 2.613" scale="0.572 0.572 0.572 0.572" rotation="0 -85.599 0" visible="true"></a-image>
 
       <!-- ambient music/sound -->
       <a-entity position="0 0 0" circles-sound="type:music; src:#magic_music; autoplay:true; loop:true; volume:0.02;"></a-entity>
@@ -246,7 +248,7 @@
         </a-entity>
       </a-entity>
 
-<<a-entity position="1 1 -4">
+<a-entity position="1 1 -4">
   <a-box position="0.2 0 0" width="2.5" height="0.05" depth="1" color="#333"></a-box>
   <!-- Define Button 1 -->
   <a-box class="interactive-key" position="-0.75 0.05 0" width="0.3" height="0.05" depth="0.1" color="gray">
