@@ -230,86 +230,137 @@
       let cableMatchL1 = false, cableMatchL2 = false, cableMatchL3 = false;
       let cableMatchR1 = false, cableMatchR2 = false, cableMatchR3 = false;
 
+      function checkOrderLeft() {
+        if (cableMatchL1 === true) {
+          cableL1.setAttribute('visible', true);
+          if(cableMatchL2 === true) {
+            cableL2.setAttribute('visible', true);
+            if(cableMatchL3 === true) {
+              cableL3.setAttribute('visible', true);
+            }
+            else {
+              cableMatchL3 = false;
+            }
+          }
+          else {
+            cableMatchL2 = false;
+          }
+        }
+        else {
+          cableMatchL1 = false;
+        }
+      }
 
-      function checkMatch() {
+      function checkOrderRight() {
+        if (cableMatchR1 === true) {
+          cableR1.setAttribute('visible', true);
+          if(cableMatchR2 === true) {
+            cableR2.setAttribute('visible', true);
+            if(cableMatchR3 === true) {
+              cableR3.setAttribute('visible', true);
+            }
+            else {
+              cableMatchR3 = false;
+            }
+          }
+          else {
+            cableMatchR2 = false;
+          }
+        }
+        else {
+          cableMatchR1 = false;
+        }
+      }
 
+      function checkMatchL1() {
+        if (server_l1  === true && comp_l1 === true) {
+          cableMatchL1 = true;
+          checkOrderLeft();
+        }
+      }
+      function checkMatchL2() {
+        if (server_l2  === true && comp_l2 === true) {
+          cableMatchL2 = true;
+          checkOrderLeft();
+        }
+      }
+      function checkMatchL3() {
+        if (server_l3  === true && comp_l3 === true) {
+          cableMatchL3 = true;
+          checkOrderLeft();
+        }
+      }
+
+      function checkMatchR1() {
+        if (server_r1  === true && comp_r1 === true) {
+          cableMatchR1 = true;
+          checkOrderRight();
+        }
+      }
+      function checkMatchR2() {
+        if (server_r2  === true && comp_r2 === true) {
+          cableMatchR2 = true;
+          checkOrderRight();
+        }
+      }
+      function checkMatchR3() {
+        if (server_r3  === true && comp_r3 === true) {
+          cableMatchR3 = true;
+          checkOrderRight();
+        }
       }
 
 
       serverL1.addEventListener('click', function() {
         server_l1 = true;
+        checkMatchL1();
       });
       serverL2.addEventListener('click', function() {
         server_l2 = true;
+        checkMatchL2();
       });
       serverL3.addEventListener('click', function() {
         server_l3 = true;
+        checkMatchL3();
       });
 
       serverR1.addEventListener('click', function() {
         server_r1 = true;
+        checkMatchR1();
       });
       serverR2.addEventListener('click', function() {
         server_r2 = true;
+        checkMatchR2();
       });
       serverR3.addEventListener('click', function() {
         server_r3 = true;
+        checkMatchR3();
       });
 
-
-      powerloom1.addEventListener('click', function() {
-        let pressloom1 = true;
-        completeFabric++;
-
-        if (threads > 0 && pressloom1 === true) {
-          fabric1.setAttribute('visible', true)
-          threads = threads - 1;
-          pressloom1 = false;
-        }
+      compL1.addEventListener('click', function() {
+        comp_l1 = true;
+        checkMatchL1();
       });
-
-      powerloom2.addEventListener('click', function() {
-        let pressloom2 = true;
-        completeFabric++;
-
-        if (threads > 0 && pressloom2 === true) {
-          fabric2.setAttribute('visible', true)
-          threads = threads - 1;
-          pressloom2 = false;
-        }
+      compL2.addEventListener('click', function() {
+        comp_l2 = true;
+        checkMatchL2();
       });
-
-      powerloom3.addEventListener('click', function() {
-        let pressloom3 = true;
-        completeFabric++;
-
-        if (threads > 0 && pressloom3 === true) {
-          fabric3.setAttribute('visible', true)
-          threads = threads - 1;
-          pressloom3 = false;
-        }
+      compL3.addEventListener('click', function() {
+        comp_l3 = true;
+        checkMatchL3();
       });
-
-      singerneedle1.addEventListener('click', function() {
-        let needle1 = true;
-
-        if (completeFabric > 0 && needle1 === true) {
-          texturedfab2.setAttribute('visible', true)
-          completeFabric = completeFabric - 1;
-          needle1 = false;
-        }
+      compR1.addEventListener('click', function() {
+        comp_r1 = true;
+        checkMatchR1();
       });
-
-      singerneedle2.addEventListener('click', function() {
-        let needle2 = true;
-
-        if (completeFabric > 0 && needle2 === true) {
-          texturedfab1.setAttribute('visible', true)
-          completeFabric = completeFabric - 1;
-          needle2 = false;
-        }
+      compR2.addEventListener('click', function() {
+        comp_r2 = true;
+        checkMatchR2();
       });
-
+      compR3.addEventListener('click', function() {
+        comp_r3 = true;
+        checkMatchR3();
+      });
   </script>
   </body>
 </html>
