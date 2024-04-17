@@ -56,6 +56,13 @@
         <a-asset-item id='telegraph_bar' src='assets\models\industrail\office\telegraph-bar.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
         <a-asset-item id="navmesh_gltf" src="assets/models/floor.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <audio id="Narr_note1-snd" src="worlds/Industrial_Room/assets/audio/note1.mp3" preload="true"></audio>
+        <audio id="note2" src="assets/audio/note2.wav" preload="true"></audio>
+        <audio id="note3" src="assets/audio/note3.wav" preload="true"></audio>
+
+        <audio id="key" src="assets/audio/key.wav" preload="true"></audio>
+
         <circles-assets/>
       </a-assets>
 
@@ -79,7 +86,8 @@
                                   description_back: An old newspaper note, you cant tell from when it's from.;
                                   description_offset:0 0.5 0;
                                   desc_arrow_position:down;
-                                  label_text: Old Newspaper;"
+                                  label_text: Old Newspaper;
+                                  audio:#Narr_note1-snd; volume:1;"
                 circles-pickup-networked></a-entity> 
 
       <a-entity id="note2"
@@ -170,6 +178,11 @@
                             animation__click="property:rotation.y; from: 0; to: -90; startEvents:click; dur: 1000;" shadow></a-entity>
       </a-entity> 
 
+      <a-entity id="opendoor3" position="-9.511 2.616 -12.758" scale="1.495 1.251 1.251" rotation="0 -90.000 0">
+                <a-entity position="0 0 0" gltf-model="#factorydoor_2"
+                            animation__click="property:rotation.y; from: 0; to: 90; startEvents:customclick; dur: 1000;" shadow></a-entity>
+      </a-entity> 
+
       <a-entity id="sewneedle1" position="0 -0.4 0">
         <a-entity class="button interactive" id="needlepos1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#needle_1" circles-sphere-env-map="src:#skyMap" animation__mouseenter="property:position.y; from: 0; to: 0.05; startEvents:mouseenter; loop: true;dur: 300;" animation__mouseleave="property:position.y; to: 0; startEvents:mouseleave; loop: false; dur: 300;"shadow></a-entity>
       </a-entity>
@@ -212,8 +225,9 @@
       <a-entity id="cabinet_2_door_L" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#cabinet2_door_l" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       <a-entity id="cabinet_2_door_R" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#cabinet2_door_r" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
 
+      <!--
       <a-entity id="officedoor" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#office_door" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
-
+        -->
       <a-entity id="telegraphbar" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#telegraph_bar" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
 
       <!--<a-entity id="key" position="0 0 0" rotation="0 0 0" scale="0.1 0.1 0.1" gltf-model="#key_door" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity> -->
@@ -223,7 +237,8 @@
                 <a-entity class="button interactive" position="0 0.6 0" geometry="primitive:cylinder; radius:0.15; height:0.2;" material="color:rgb(255, 100, 100)"
                             animation__mouseenter="property:material.color; type:color; to:rgb(255, 0, 0); startEvents:mouseenter; dur:200"
                             animation__mouseleave="property:material.color; type:color; to:rgb(255, 100, 100); startEvents:mouseleave; dur:200"
-                            animation__click="property:position.y; from:0.55; to:0.6; startEvents:click; dur:300" shadow></a-entity>
+                            animation__click="property:position.y; from:0.55; to:0.6; startEvents:click; dur:300" shadow
+                            onclick="addElement('Red')"></a-entity>
                 <a-entity position="0 0.3 0" geometry="primitive:box; width:0.5; depth:0.5; height:0.6;" material="color:rgb(255, 255, 255)" shadow></a-entity>
         </a-entity> 
 
@@ -231,7 +246,8 @@
                 <a-entity class="button interactive" position="0 0.6 0" geometry="primitive:cylinder; radius:0.15; height:0.2;" material="color:rgb(100, 100, 255)"
                       animation__mouseenter="property:material.color; type:color; to:rgb(0, 0, 255); startEvents:mouseenter; dur:200"
                       animation__mouseleave="property:material.color; type:color; to:rgb(100, 100, 255); startEvents:mouseleave; dur:200"
-                      animation__click="property:position.y; from:0.55; to:0.6; startEvents:click; dur:300" shadow></a-entity>
+                      animation__click="property:position.y; from:0.55; to:0.6; startEvents:click; dur:300" shadow
+                      onclick="addElement('Blue')"></a-entity>
                 <a-entity position="0 0.3 0" geometry="primitive:box; width:0.5; depth:0.5; height:0.6;" material="color:rgb(255, 255, 255)" shadow></a-entity>
         </a-entity> 
 
@@ -239,9 +255,20 @@
                 <a-entity class="button interactive" position="0 0.6 0" geometry="primitive:cylinder; radius:0.15; height:0.2;" material="color:rgb(100, 255, 100)"
                       animation__mouseenter="property:material.color; type:color; to:rgb(0, 255, 0); startEvents:mouseenter; dur:200"
                       animation__mouseleave="property:material.color; type:color; to:rgb(100, 255, 100); startEvents:mouseleave; dur:200"
-                      animation__click="property:position.y; from:0.55; to:0.6; startEvents:click; dur:300" shadow></a-entity>
+                      animation__click="property:position.y; from:0.55; to:0.6; startEvents:click; dur:300" shadow
+                      onclick="addElement('Green')"></a-entity>
                 <a-entity position="0 0.3 0" geometry="primitive:box; width:0.5; depth:0.5; height:0.6;" material="color:rgb(255, 255, 255)" shadow></a-entity>
         </a-entity> 
+
+        <a-entity id="light1" position="-2.151 5.5 -19.092" rotation="90 0 0" geometry="primitive:cylinder; radius:0.15; height:0.2;" material="color:rgb(0, 0, 0)"></a-entity>
+        <a-entity id="light2" position="-1.798 5.5 -19.092" rotation="90 0 0" geometry="primitive:cylinder; radius:0.15; height:0.2;" material="color:rgb(0, 0, 0)"></a-entity>
+        <a-entity id="light3" position="-1.454 5.5 -19.092" rotation="90 0 0" geometry="primitive:cylinder; radius:0.15; height:0.2;" material="color:rgb(0, 0, 0)"></a-entity>
+
+        <a-entity id="Portal-SpaceRoom"
+                position="-10.271 3.567 -13.549" rotation="0 0 0"
+                circles-portal="img_src:/global/assets/textures/equirectangular/WhiteBlue.jpg; title_text:Space Room; link_url:/w/Space_Room"
+                shadow
+                visible="true"></a-entity>
       
 
 
@@ -276,6 +303,150 @@
     <circles-end-scripts/>
 
     <script>
+      //THE CODE IS: 1: GREEN, 2: BLUE, 3: RED
+
+      // Initialize an array to store the elements
+      let elementsArray = [];
+
+      function checkSequence() {
+        const expectedSequence = ['Green', 'Blue', 'Red'];
+
+        if (elementsArray.length === expectedSequence.length) {
+          for (let i = 0; i < elementsArray.length; i++) {
+            if (elementsArray[i] !== expectedSequence[i]) {
+              return false;
+            }
+          }
+
+          return true;
+        }
+        return false;
+      }
+
+      // Function to add an element to the array and clear all elements if the maximum length is reached
+      function addElement(element) {
+        if (elementsArray.length < 3) {
+            elementsArray.push(element);
+            console.log('Element added:', element);
+
+            if(elementsArray[0] === "Green") {
+              const light1Entity = document.querySelector('#light1');
+              light1Entity.setAttribute('material', 'color', 'rgb(0, 255, 0)');
+            }
+            else if(elementsArray[0] === "Blue") {
+              const light1Entity = document.querySelector('#light1');
+              light1Entity.setAttribute('material', 'color', 'rgb(0, 0, 255)');
+            }
+            else if(elementsArray[0] === "Red") {
+              const light1Entity = document.querySelector('#light1');
+              light1Entity.setAttribute('material', 'color', 'rgb(255, 0, 0)');
+            }
+            else {
+              const light1Entity = document.querySelector('#light1');
+              light1Entity.setAttribute('material', 'color', 'rgb(0, 0, 0)');
+            }
+
+            if(elementsArray[1] === "Green") {
+              const light2Entity = document.querySelector('#light2');
+              light2Entity.setAttribute('material', 'color', 'rgb(0, 255, 0)');
+            }
+            else if(elementsArray[1] === "Blue") {
+              const light2Entity = document.querySelector('#light2');
+              light2Entity.setAttribute('material', 'color', 'rgb(0, 0, 255)');
+            }
+            else if(elementsArray[1] === "Red") {
+              const light2Entity = document.querySelector('#light2');
+              light2Entity.setAttribute('material', 'color', 'rgb(255, 0, 0)');
+            }
+            else {
+              const light2Entity = document.querySelector('#light2');
+              light2Entity.setAttribute('material', 'color', 'rgb(0, 0, 0)');
+            }
+
+            if(elementsArray[2] === "Green") {
+              const light3Entity = document.querySelector('#light3');
+              light3Entity.setAttribute('material', 'color', 'rgb(0, 255, 0)');
+            }
+            else if(elementsArray[2] === "Blue") {
+              const light3Entity = document.querySelector('#light3');
+              light3Entity.setAttribute('material', 'color', 'rgb(0, 0, 255)');
+            }
+            else if(elementsArray[2] === "Red") {
+              const light3Entity = document.querySelector('#light3');
+              light3Entity.setAttribute('material', 'color', 'rgb(255, 0, 0)');
+            }
+            else {
+              const light3Entity = document.querySelector('#light3');
+              light3Entity.setAttribute('material', 'color', 'rgb(0, 0, 0)');
+            }
+
+            if(checkSequence()) {
+              console.log("sequence matched!");
+
+              // Trigger the animation to open the door
+              const doorEntity = document.querySelector('#opendoor3 [gltf-model]');
+              doorEntity.emit('customclick'); // This will simulate a click event on the door entit
+            }
+            
+        } else {
+            console.log('New array has started, new element is here.');
+            elementsArray = []; // Clear all elements
+            elementsArray.push(element);
+            console.log('Element added:', element);
+
+            if(elementsArray[0] === "Green") {
+              const light1Entity = document.querySelector('#light1');
+              light1Entity.setAttribute('material', 'color', 'rgb(0, 255, 0)');
+            }
+            else if(elementsArray[0] === "Blue") {
+              const light1Entity = document.querySelector('#light1');
+              light1Entity.setAttribute('material', 'color', 'rgb(0, 0, 255)');
+            }
+            else if(elementsArray[0] === "Red") {
+              const light1Entity = document.querySelector('#light1');
+              light1Entity.setAttribute('material', 'color', 'rgb(255, 0, 0)');
+            }
+            else {
+              const light1Entity = document.querySelector('#light1');
+              light1Entity.setAttribute('material', 'color', 'rgb(0, 0, 0)');
+            }
+
+            if(elementsArray[1] === "Green") {
+              const light2Entity = document.querySelector('#light2');
+              light2Entity.setAttribute('material', 'color', 'rgb(0, 255, 0)');
+            }
+            else if(elementsArray[1] === "Blue") {
+              const light2Entity = document.querySelector('#light2');
+              light2Entity.setAttribute('material', 'color', 'rgb(0, 0, 255)');
+            }
+            else if(elementsArray[1] === "Red") {
+              const light2Entity = document.querySelector('#light2');
+              light2Entity.setAttribute('material', 'color', 'rgb(255, 0, 0)');
+            }
+            else {
+              const light2Entity = document.querySelector('#light2');
+              light2Entity.setAttribute('material', 'color', 'rgb(0, 0, 0)');
+            }
+
+            if(elementsArray[2] === "Green") {
+              const light3Entity = document.querySelector('#light3');
+              light3Entity.setAttribute('material', 'color', 'rgb(0, 255, 0)');
+            }
+            else if(elementsArray[2] === "Blue") {
+              const light3Entity = document.querySelector('#light3');
+              light3Entity.setAttribute('material', 'color', 'rgb(0, 0, 255)');
+            }
+            else if(elementsArray[2] === "Red") {
+              const light3Entity = document.querySelector('#light3');
+              light3Entity.setAttribute('material', 'color', 'rgb(255, 0, 0)');
+            }
+            else {
+              const light3Entity = document.querySelector('#light3');
+              light3Entity.setAttribute('material', 'color', 'rgb(0, 0, 0)');
+            }
+        }
+      }
+
       let threads = 0;
       let completeFabric = 0;
 
