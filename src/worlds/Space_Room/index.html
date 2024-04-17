@@ -14,8 +14,6 @@
 
         <img id='skyMap' src='assets/textures/space.jpg' crossorigin="anonymous">
 
-        <!-- INDUSTRIAL MAIN ROOM ASSETS -->
-
         <a-asset-item id='space_room' src='assets/models/spacelabroom.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
         <a-asset-item id='space_room_printer' src='assets/models/printer.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
@@ -84,12 +82,70 @@
       <a-entity id="cableright2" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#cable_right_2" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
       <a-entity id="cableright3" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#cable_right_3" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
 
-      <!--buttons server-->
-      <a-entity id="serveroutletl1" position="-5.43 2.093 -3.416" rotation="0 0 0">
-        <a-entity class="button interactive" id="wheel_sew" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#wheelsew" circles-sphere-env-map="src:#skyMap" animation__mouseenter="property:rotation.z; from: 0; to: 350; startEvents:mouseenter; loop: true; dur: 1700;" animation__mouseleave="property:rotation.z; to: 0; startEvents:mouseleave; loop: false; dur: 1000;" shadow="cast:false; receive:true;"></a-entity>
+      <!--outlet buttons server's-->
+      <!--Left-->
+      <a-entity id="serveroutletl1" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="serverl1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_left_1" circles-sphere-env-map="src:#skyMap"></a-entity>
+      </a-entity>
+      <a-entity id="serveroutletl2" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="serverl2" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_left_2" circles-sphere-env-map="src:#skyMap"></a-entity>
+      </a-entity>
+      <a-entity id="serveroutletl3" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="serverl3" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_left_3" circles-sphere-env-map="src:#skyMap"></a-entity>
+      </a-entity>
+      <a-entity id="serveroutletl4" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="serverl4" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_left_4" circles-sphere-env-map="src:#skyMap"></a-entity>
+      </a-entity>
+      <a-entity id="serveroutletl5" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="serverl5" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_left_5" circles-sphere-env-map="src:#skyMap"></a-entity>
       </a-entity>
 
+      <!--Right-->
+      <a-entity id="serveroutletr1" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="serverr1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_right_1" circles-sphere-env-map="src:#skyMap"></a-entity>
+      </a-entity>
+      <a-entity id="serveroutletr2" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="serverr2" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_right_2" circles-sphere-env-map="src:#skyMap"></a-entity>
+      </a-entity>
+      <a-entity id="serveroutletr3" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="serverr3" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_right_3" circles-sphere-env-map="src:#skyMap"></a-entity>
+      </a-entity>
+      <a-entity id="serveroutletr4" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="serverr4" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_right_4" circles-sphere-env-map="src:#skyMap"></a-entity>
+      </a-entity>
+      <a-entity id="serveroutletr5" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="serverr5" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_right_5" circles-sphere-env-map="src:#skyMap"></a-entity>
+      </a-entity>
+
+       <!--outlet buttons computer's-->
+       <!--left-->
+       <a-entity id="compoutletl1" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="compl1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_left_1" circles-sphere-env-map="src:#skyMap"></a-entity>
+      </a-entity>
+      <a-entity id="compoutletl2" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="compl2" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_left_2" circles-sphere-env-map="src:#skyMap"></a-entity>
+      </a-entity>
+      <a-entity id="compoutletl3" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="compl3" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_left_3" circles-sphere-env-map="src:#skyMap"></a-entity>
+      </a-entity>
+
+      <!--right-->
+      <a-entity id="compoutletr1" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="compr1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_right_1" circles-sphere-env-map="src:#skyMap"></a-entity>
+      </a-entity>
+      <a-entity id="compoutletr2" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="compr2" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_right_2" circles-sphere-env-map="src:#skyMap"></a-entity>
+      </a-entity>
+      <a-entity id="compoutletr3" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="compr3" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_right_3" circles-sphere-env-map="src:#skyMap"></a-entity>
+      </a-entity>
       
+
+      <!--other models-->
+      <a-entity id="lemModel" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#lem_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="moonModel" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#moon_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="hubbleModel" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#hubble_telescope" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+
       
 
       <a-entity id="Portal-Testworld2"
@@ -130,5 +186,130 @@
 
     <circles-end-scripts/>
 
+    <script>
+
+      //code for cable
+      //let threads = 0;
+      //let completeFabric = 0;
+
+      //outletbuttons
+      const serverL1 = document.getElementById('serverl1');
+      const serverL2 = document.getElementById('serverl2');
+      const serverL3 = document.getElementById('serverl3');
+      const serverL4 = document.getElementById('serverl4');
+      const serverL5 = document.getElementById('serverl5');
+
+      const serverR1 = document.getElementById('serverr1');
+      const serverR2 = document.getElementById('serverr2');
+      const serverR3 = document.getElementById('serverr3');
+      const serverR4 = document.getElementById('serverr4');
+      const serverR5 = document.getElementById('serverr5');
+
+      const compL1 = document.getElementById('compl1');
+      const compL2 = document.getElementById('compl2');
+      const compL3 = document.getElementById('compl3');
+
+      const compR1 = document.getElementById('compr1');
+      const compR2 = document.getElementById('compr2');
+      const compR3 = document.getElementById('compr3');
+
+      //cables
+      const cableL1 = document.getElementById('cableleft1');
+      const cableL2 = document.getElementById('cableleft2');
+      const cableL3 = document.getElementById('cableleft3');
+      const cableR1 = document.getElementById('cableright1');
+      const cableR2 = document.getElementById('cableright2');
+      const cableR3 = document.getElementById('cableright3');
+      
+      let server_l1 = false, server_l2 = false, server_l3 = false, server_l4 = false, server_l5 = false;
+      let server_r1 = false, server_r2 = false, server_r3 = false, server_r4 = false, server_r5 = false;
+
+      let comp_l1 = false, comp_l2 = false, comp_l3 = false;
+      let comp_r1 = false, comp_r2 = false, comp_r3 = false;
+
+      let cableMatchL1 = false, cableMatchL2 = false, cableMatchL3 = false;
+      let cableMatchR1 = false, cableMatchR2 = false, cableMatchR3 = false;
+
+
+      function checkMatch() {
+
+      }
+
+
+      serverL1.addEventListener('click', function() {
+        server_l1 = true;
+      });
+      serverL2.addEventListener('click', function() {
+        server_l2 = true;
+      });
+      serverL3.addEventListener('click', function() {
+        server_l3 = true;
+      });
+
+      serverR1.addEventListener('click', function() {
+        server_r1 = true;
+      });
+      serverR2.addEventListener('click', function() {
+        server_r2 = true;
+      });
+      serverR3.addEventListener('click', function() {
+        server_r3 = true;
+      });
+
+
+      powerloom1.addEventListener('click', function() {
+        let pressloom1 = true;
+        completeFabric++;
+
+        if (threads > 0 && pressloom1 === true) {
+          fabric1.setAttribute('visible', true)
+          threads = threads - 1;
+          pressloom1 = false;
+        }
+      });
+
+      powerloom2.addEventListener('click', function() {
+        let pressloom2 = true;
+        completeFabric++;
+
+        if (threads > 0 && pressloom2 === true) {
+          fabric2.setAttribute('visible', true)
+          threads = threads - 1;
+          pressloom2 = false;
+        }
+      });
+
+      powerloom3.addEventListener('click', function() {
+        let pressloom3 = true;
+        completeFabric++;
+
+        if (threads > 0 && pressloom3 === true) {
+          fabric3.setAttribute('visible', true)
+          threads = threads - 1;
+          pressloom3 = false;
+        }
+      });
+
+      singerneedle1.addEventListener('click', function() {
+        let needle1 = true;
+
+        if (completeFabric > 0 && needle1 === true) {
+          texturedfab2.setAttribute('visible', true)
+          completeFabric = completeFabric - 1;
+          needle1 = false;
+        }
+      });
+
+      singerneedle2.addEventListener('click', function() {
+        let needle2 = true;
+
+        if (completeFabric > 0 && needle2 === true) {
+          texturedfab1.setAttribute('visible', true)
+          completeFabric = completeFabric - 1;
+          needle2 = false;
+        }
+      });
+
+  </script>
   </body>
 </html>
