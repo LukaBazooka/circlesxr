@@ -40,8 +40,6 @@
 
         <!-- INDUSTRIAL ROOM OFFICE ASSETS -->
 
-        <a-asset-item id='cabinet1_door_l' src='assets\models\industrail\office\cabient1-door-l.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-        <a-asset-item id='cabinet1_door_r' src='assets\models\industrail\office\cabient1-door-r.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='cabinet2_door_l' src='assets\models\industrail\office\cabient2-door-l.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='cabinet2_door_r' src='assets\models\industrail\office\cabient2-door-r.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
@@ -57,11 +55,11 @@
 
         <a-asset-item id="navmesh_gltf" src="assets/models/floor.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
-        <audio id="Narr_note1-snd" src="worlds/Industrial_Room/assets/audio/note1.mp3" preload="true"></audio>
-        <audio id="note2" src="assets/audio/note2.wav" preload="true"></audio>
-        <audio id="note3" src="assets/audio/note3.wav" preload="true"></audio>
+        <audio id="Narr_note1-snd" src="/worlds/Industrial_Room/assets/audio/note1.mp3" preload="true"></audio>
+        <audio id="Narr_note2-snd" src="/worlds/Industrial_Room/assets/audio/note2.wav" preload="true"></audio>
+        <audio id="Narr_note3-snd" src="/worlds/Industrial_Room/assets/audio/note3.wav" preload="true"></audio>
 
-        <audio id="key" src="assets/audio/key.wav" preload="true"></audio>
+        <audio id="Narr_key-snd" src="/worlds/Industrial_Room/assets/audio/key.wav" preload="true"></audio>
 
         <circles-assets/>
       </a-assets>
@@ -87,7 +85,7 @@
                                   description_offset:0 0.5 0;
                                   desc_arrow_position:down;
                                   label_text: Old Newspaper;
-                                  audio:#Narr_note1-snd; volume:1;"
+                                  audio:#Narr_note1-snd; volume:100;"
                 circles-pickup-networked></a-entity> 
 
       <a-entity id="note2"
@@ -102,7 +100,8 @@
                                   description_back: An old newspaper note, you cant tell from when it's from.;
                                   description_offset:0 0.5 0;
                                   desc_arrow_position:down;
-                                  label_text: Old Newspaper;"
+                                  label_text: Old Newspaper;
+                                  audio:#Narr_note2-snd; volume:100;"
                 circles-pickup-networked></a-entity> 
 
       <a-entity id="note3"
@@ -117,7 +116,8 @@
                                   description_back: An old newspaper note, you cant tell from when it's from.;
                                   description_offset:0 0.5 0;
                                   desc_arrow_position:down;
-                                  label_text: Old Newspaper;"
+                                  label_text: Old Newspaper;
+                                  audio:#Narr_note3-snd; volume:100;"
                 circles-pickup-networked></a-entity> 
 
 
@@ -133,7 +133,8 @@
                                   description_back: A rusty key, you can open the door with this.;
                                   description_offset:0 0.5 0;
                                   desc_arrow_position:down;
-                                  label_text: Key;"
+                                  label_text: Key;
+                                  audio:#Narr_key-snd; volume:100;"
                 circles-pickup-networked></a-entity>  
 
       <a-entity id="welcome_description" position="-1.270 1.633 -3.977" rotation="0 0 0"
