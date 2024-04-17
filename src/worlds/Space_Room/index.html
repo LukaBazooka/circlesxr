@@ -77,9 +77,19 @@
       <a-entity id="spaceroomprinter" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#space_room_printer" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
 
       <!--cables-->
-      <a-entity id="cableleft1" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1">
-        <a-entity class="button interactive" id="cablel1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#cable_left_1" circles-sphere-env-map="src:#skyMap" animation__mouseenter="property:rotation.z; from: 0; to: 350; startEvents:mouseenter; loop: true; dur: 1700;" animation__mouseleave="property:rotation.z; to: 0; startEvents:mouseleave; loop: false; dur: 1000;" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="cableleft1" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#cable_left_1" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
+      <a-entity id="cableleft2" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#cable_left_2" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
+      <a-entity id="cableleft3" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#cable_left_3" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
+      <a-entity id="cableright1" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#cable_right_1" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
+      <a-entity id="cableright2" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#cable_right_2" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
+      <a-entity id="cableright3" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#cable_right_3" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
+
+      <!--buttons server-->
+      <a-entity id="serveroutletl1" position="-5.43 2.093 -3.416" rotation="0 0 0">
+        <a-entity class="button interactive" id="wheel_sew" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#wheelsew" circles-sphere-env-map="src:#skyMap" animation__mouseenter="property:rotation.z; from: 0; to: 350; startEvents:mouseenter; loop: true; dur: 1700;" animation__mouseleave="property:rotation.z; to: 0; startEvents:mouseleave; loop: false; dur: 1000;" shadow="cast:false; receive:true;"></a-entity>
       </a-entity>
+
+      
       
 
       <a-entity id="Portal-Testworld2"
