@@ -75,7 +75,7 @@
 
       <a-entity id="game_manager" lights-interactive></a-entity>
       <a-image id="instructions" src="#screen" position="-0.166 3.083 1.625" scale="1.948 1.948 1.948" rotation="0 169.257 0" visible="true"></a-image>
-      <a-image id="computer" src="#screen2" position="0 2 7" scale="0.8 0.8 0.8" rotation="0 180 0" visible="true"></a-image>
+      <a-image id="computer" src="#screen2" position="0 2 1.2" scale="0.8 0.8 0.8" rotation="0 180 0" visible="false"></a-image>
       <!-- Printernote Image -->
       <a-image id="printer_note" src="#note" position="0 2 -4" scale="0.3 0.3 0.3"
                rotation="0 -85.599 0" visible="false"></a-image>
@@ -282,6 +282,8 @@
       const key8 = document.getElementById('key8');
       const key9 = document.getElementById('key9');
 
+      const passwordClue = document.getElementById('computer');
+
       
       let server_l1 = false, server_l2 = false, server_l3 = false, server_l4 = false, server_l5 = false;
       let server_r1 = false, server_r2 = false, server_r3 = false, server_r4 = false, server_r5 = false;
@@ -291,6 +293,8 @@
 
       let cableMatchL1 = false, cableMatchL2 = false, cableMatchL3 = false;
       let cableMatchR1 = false, cableMatchR2 = false, cableMatchR3 = false;
+
+      let pass_1 = false, pass_9 = false, pass_6 = false, pass_8 = false;
 
       function checkOrderLeft() {
         if (cableMatchL1 === true) {
@@ -319,6 +323,12 @@
               console.log("cableR3 displayed");
             }
           }
+        }
+      }
+
+      function checkPassword() {
+        if (pass_1 === true && pass_9 === true && pass_6 === true && pass_8 === true) {
+          passwordClue.setAttribute('visible', true);
         }
       }
 
@@ -428,6 +438,27 @@
         comp_r3 = true;
         checkMatchR3();
         console.log("compr3 clicked");
+      });
+
+      key1.addEventListener('click', function() {
+        pass_1 = true;
+        //
+        console.log("key1 clicked");
+      });
+      key9.addEventListener('click', function() {
+        pass_9 = true;
+        //
+        console.log("key9 clicked");
+      });
+      key6.addEventListener('click', function() {
+        pass_6 = true;
+        //
+        console.log("key6 clicked");
+      });
+      key8.addEventListener('click', function() {
+        pass_8 = true;
+        //
+        console.log("key8 clicked");
       });
 
 
