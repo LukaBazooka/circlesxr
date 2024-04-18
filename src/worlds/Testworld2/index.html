@@ -22,7 +22,7 @@
         <a-asset-item id='singledoor_wood' src='assets\models\doors\singleDoor-wood.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="clock" src="assets/models/clock.glb"response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="lenwood" src="assets/models/lenwood.glb"response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-        <a-asset-item id="sweing" src="assets/models/sweing.glb"response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="sweing" src="assets/models/sew.glb"response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
 
         
@@ -63,7 +63,7 @@
                                     description_text_back:The ingenium lab will host your adventure through time! Any technology you find in your travels, will return back here.;
                                     lookAtCamera:true;
                                     "></a-entity>
-
+<!--
       <a-entity id="sewing_description" position="0.643 2.023 8.909" rotation="0 0 0"
                 circles-description=" title_text_front:Sewing Machine;
                                       title_text_back:Sewing Machine;
@@ -78,7 +78,7 @@
                                       description_text_front:The LEM was an important development in space travel during the 1960s, models like this were used to land on the moon.;
                                         description_text_back:The LEM was an important development in space travel during the 1960s, models like this were used to land on the moon.;                                              lookAtCamera:true;
                                         "></a-entity>
-
+-->
       <a-entity id="Portal-Wardrobe"
                 position="-4.786 1.069 0" rotation="0 0 0"
                 circles-portal="img_src:/global/assets/textures/equirectangular/WhiteBlue.jpg; title_text:Wardrobe; link_url:/w/Wardrobe"
@@ -109,22 +109,39 @@
 
 <!-- Lenwood on the newStand -->
 <a-entity id="lenwoodArtifact"
-          gltf-model="#lenwood"
-          position="3.300 0.390 8.064 " 
-          rotation="3.702 -1.520 11.346"
-          scale="0.370 0.370 0.370"  
-          visible="true"> <!-- Set visibility to false initially -->
-</a-entity>
-
+                position="0.699 0.900 8.999" rotation="0 0 0" scale="0.370 0.370 0.370"
+                gltf-model="#lenwood"
+                visible="true"
+                circles-sphere-env-map="src:#skyMap"
+                circles-artefact="inspectPosition:0 0 0; inspectRotation:0 0 0; inspectScale:0.2 0.2 0.2;
+                                  textRotationY:90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
+                                  title: Key;
+                                  description: A rusty key, you can open the door with this.;
+                                  title_back: Key;
+                                  description_back: A rusty key, you can open the door with this.;
+                                  description_offset:0 0.5 0;
+                                  desc_arrow_position:down;
+                                  label_text: Key;
+                                  audio:#Narr_key-snd; volume:100;"
+                circles-pickup-networked></a-entity>  
 
 <!-- Sweing on its own stand -->
 <a-entity id="sweingArtifact"
-          gltf-model="#sweing"
-          position="-1.76 -0.41 6.952" 
-          scale="0.734 0.734 0.734"  
-          visible="true"> <!-- Set visibility to false initially -->
-</a-entity>
-
+                position="-1.307 0.394 -2.778" rotation="0 0 0" scale="0.734 0.734 0.734"
+                gltf-model="#sweing"
+                visible="true"
+                circles-sphere-env-map="src:#skyMap"
+                circles-artefact="inspectPosition:0 0 0; inspectRotation:0 0 0; inspectScale:0.2 0.2 0.2;
+                                  textRotationY:90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
+                                  title: Key;
+                                  description: A rusty key, you can open the door with this.;
+                                  title_back: Key;
+                                  description_back: A rusty key, you can open the door with this.;
+                                  description_offset:0 0.5 0;
+                                  desc_arrow_position:down;
+                                  label_text: Key;
+                                  audio:#Narr_key-snd; volume:100;"
+                circles-pickup-networked></a-entity>  
 
 <!-- Stand for sweing -->
 <a-cylinder id="sweingStand"
