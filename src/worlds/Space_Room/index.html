@@ -30,29 +30,19 @@
         <a-asset-item id='oulet_left_1' src='assets/models/outlet_l_1.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='oulet_left_2' src='assets/models/outlet_l_2.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='oulet_left_3' src='assets/models/outlet_l_3.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-        <a-asset-item id='oulet_left_4' src='assets/models/outlet_l_4.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-        <a-asset-item id='oulet_left_5' src='assets/models/outlet_l_5.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='outlet_main_left_1' src='assets/models/outlet_main_l_1.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='outlet_main_left_2' src='assets/models/outlet_main_l_2.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='outlet_main_left_3' src='assets/models/outlet_main_l_3.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='oulet_right_1' src='assets/models/outlet_r_1.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='oulet_right_2' src='assets/models/outlet_r_2.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='oulet_right_3' src='assets/models/outlet_r_3.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-        <a-asset-item id='oulet_right_4' src='assets/models/outlet_r_4.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-        <a-asset-item id='oulet_right_5' src='assets/models/outlet_r_5.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='outlet_main_right_1' src='assets/models/outlet_main_r_1.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='outlet_main_right_2' src='assets/models/outlet_main_r_2.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='outlet_main_right_3' src='assets/models/outlet_main_r_3.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
         <!--keys-->
-        <a-asset-item id='key_0' src='assets/models/key0.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='key_1' src='assets/models/key1.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-        <a-asset-item id='key_2' src='assets/models/key2.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-        <a-asset-item id='key_3' src='assets/models/key3.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-        <a-asset-item id='key_4' src='assets/models/key4.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-        <a-asset-item id='key_5' src='assets/models/key5.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='key_6' src='assets/models/key6.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-        <a-asset-item id='key_7' src='assets/models/key7.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='key_8' src='assets/models/key8.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='key_9' src='assets/models/key9.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
@@ -88,7 +78,9 @@
 
       <a-entity id="spaceroom" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#space_room" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
 
-      <a-entity id="spaceroomprinter" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#space_room_printer" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"  cursor-listener></a-entity>
+      <a-entity id="spaceroomprinter" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="codeprinter" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#space_room_printer" circles-sphere-env-map="src:#skyMap"></a-entity>
+      </a-entity>
 
       <!--cables-->
       <a-entity id="cableleft1" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#cable_left_1" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
@@ -101,91 +93,61 @@
       <!--outlet buttons server's-->
       <!--Left-->
       <a-entity id="serveroutletl1" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="serverl1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_left_1" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.x; to: -0.1; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.x; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+        <a-entity class="button interactive" id="serverl1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_left_1" circles-sphere-env-map="src:#skyMap;"></a-entity>
       </a-entity>
       <a-entity id="serveroutletl2" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="serverl2" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_left_2" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.x; to: -0.1; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.x; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+        <a-entity class="button interactive" id="serverl2" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_left_2" circles-sphere-env-map="src:#skyMap;"></a-entity>
       </a-entity>
       <a-entity id="serveroutletl3" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="serverl3" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_left_3" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.x; to: -0.1; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.x; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
-      </a-entity>
-      <a-entity id="serveroutletl4" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="serverl4" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_left_4" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.x; to: -0.1; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.x; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
-      </a-entity>
-      <a-entity id="serveroutletl5" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="serverl5" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_left_5" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.x; to: -0.1; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.x; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+        <a-entity class="button interactive" id="serverl3" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_left_3" circles-sphere-env-map="src:#skyMap;"></a-entity>
       </a-entity>
 
       <!--Right-->
       <a-entity id="serveroutletr1" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="serverr1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_right_1" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.x; to: 0.1; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.x; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+        <a-entity class="button interactive" id="serverr1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_right_1" circles-sphere-env-map="src:#skyMap;"></a-entity>
       </a-entity>
       <a-entity id="serveroutletr2" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="serverr2" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_right_2" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.x; to: 0.1; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.x; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+        <a-entity class="button interactive" id="serverr2" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_right_2" circles-sphere-env-map="src:#skyMap;"></a-entity>
       </a-entity>
       <a-entity id="serveroutletr3" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="serverr3" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_right_3" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.x; to: 0.1; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.x; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
-      </a-entity>
-      <a-entity id="serveroutletr4" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="serverr4" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_right_4" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.x; to: 0.1; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.x; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
-      </a-entity>
-      <a-entity id="serveroutletr5" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="serverr5" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_right_5" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.x; to: 0.1; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.x; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+        <a-entity class="button interactive" id="serverr3" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#oulet_right_3" circles-sphere-env-map="src:#skyMap;"></a-entity>
       </a-entity>
 
        <!--outlet buttons computer's-->
        <!--left-->
        <a-entity id="compoutletl1" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="compl1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_left_1" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.x; to: 0.05; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.x; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+        <a-entity class="button interactive" id="compl1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_left_1" circles-sphere-env-map="src:#skyMap;"></a-entity>
       </a-entity>
       <a-entity id="compoutletl2" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="compl2" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_left_2" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.x; to: 0.05; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.x; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+        <a-entity class="button interactive" id="compl2" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_left_2" circles-sphere-env-map="src:#skyMap;"></a-entity>
       </a-entity>
       <a-entity id="compoutletl3" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="compl3" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_left_3" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.x; to: 0.05; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.x; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+        <a-entity class="button interactive" id="compl3" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_left_3" circles-sphere-env-map="src:#skyMap;"></a-entity>
       </a-entity>
 
       <!--right-->
       <a-entity id="compoutletr1" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="compr1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_right_1" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.x; to: -0.05; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.x; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+        <a-entity class="button interactive" id="compr1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_right_1" circles-sphere-env-map="src:#skyMap;"></a-entity>
       </a-entity>
       <a-entity id="compoutletr2" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="compr2" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_right_2" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.x; to: -0.05; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.x; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+        <a-entity class="button interactive" id="compr2" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_right_2" circles-sphere-env-map="src:#skyMap;"></a-entity>
       </a-entity>
       <a-entity id="compoutletr3" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="compr3" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_right_3" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.x; to: -0.05; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.x; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+        <a-entity class="button interactive" id="compr3" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#outlet_main_right_3" circles-sphere-env-map="src:#skyMap;"></a-entity>
       </a-entity>
 
       <!--keys code-->
-      <a-entity id="keyboard_0" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="key0" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_0" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
-      </a-entity>
       <a-entity id="keyboard_1" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="key1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_1" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
-      </a-entity>
-      <a-entity id="keyboard_2" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="key2" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_2" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
-      </a-entity>
-      <a-entity id="keyboard_3" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="key3" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_3" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
-      </a-entity>
-      <a-entity id="keyboard_4" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="key4" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_4" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
-      </a-entity>
-      <a-entity id="keyboard_5" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="key5" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_5" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+        <a-entity class="button interactive" id="key1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_1" circles-sphere-env-map="src:#skyMap;"></a-entity>
       </a-entity>
       <a-entity id="keyboard_6" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="key6" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_6" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
-      </a-entity>
-      <a-entity id="keyboard_7" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="key7" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_7" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+        <a-entity class="button interactive" id="key6" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_6" circles-sphere-env-map="src:#skyMap;"></a-entity>
       </a-entity>
       <a-entity id="keyboard_8" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="key8" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_8" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+        <a-entity class="button interactive" id="key8" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_8" circles-sphere-env-map="src:#skyMap;"></a-entity>
       </a-entity>
       <a-entity id="keyboard_9" position="0 -0.4 0" rotation="0 0 0">
-        <a-entity class="button interactive" id="key9" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_9" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+        <a-entity class="button interactive" id="key9" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_9" circles-sphere-env-map="src:#skyMap;"></a-entity>
       </a-entity>
 
       <a-entity id="Portal-Testworld2"
@@ -227,14 +189,10 @@
       const serverL1 = document.getElementById('serverl1');
       const serverL2 = document.getElementById('serverl2');
       const serverL3 = document.getElementById('serverl3');
-      const serverL4 = document.getElementById('serverl4');
-      const serverL5 = document.getElementById('serverl5');
 
       const serverR1 = document.getElementById('serverr1');
       const serverR2 = document.getElementById('serverr2');
       const serverR3 = document.getElementById('serverr3');
-      const serverR4 = document.getElementById('serverr4');
-      const serverR5 = document.getElementById('serverr5');
 
       const compL1 = document.getElementById('compl1');
       const compL2 = document.getElementById('compl2');
@@ -252,23 +210,20 @@
       const cableR2 = document.getElementById('cableright2');
       const cableR3 = document.getElementById('cableright3');
 
+      const printedcode = document.getElementById('printer_note');
+      const printer = document.getElementById('codeprinter');
+
       //keys
-      const key0 = document.getElementById('key0');
       const key1 = document.getElementById('key1');
-      const key2 = document.getElementById('key2');
-      const key3 = document.getElementById('key3');
-      const key4 = document.getElementById('key4');
-      const key5 = document.getElementById('key5');
       const key6 = document.getElementById('key6');
-      const key7 = document.getElementById('key7');
       const key8 = document.getElementById('key8');
       const key9 = document.getElementById('key9');
 
       const passwordClue = document.getElementById('computer');
 
       
-      let server_l1 = false, server_l2 = false, server_l3 = false, server_l4 = false, server_l5 = false;
-      let server_r1 = false, server_r2 = false, server_r3 = false, server_r4 = false, server_r5 = false;
+      let server_l1 = false, server_l2 = false, server_l3 = false;
+      let server_r1 = false, server_r2 = false, server_r3 = false;
 
       let comp_l1 = false, comp_l2 = false, comp_l3 = false;
       let comp_r1 = false, comp_r2 = false, comp_r3 = false;
@@ -442,6 +397,12 @@
         checkPassword();
         console.log("key8 clicked");
       });
+
+      printer.addEventListener('click', function() {
+        printedcode.setAttribute('visible', true);
+        console.log("printer clicked");
+      });
+      
   </script>
   </body>
 </html>
