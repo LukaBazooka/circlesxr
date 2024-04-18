@@ -176,13 +176,23 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-    // Listen for click event on the portal that indicates a return from space
-    document.querySelector('#Portal-Testworld2').addEventListener('click', () => {
-        console.log("Portal to Testworld2 clicked");
-        sessionStorage.setItem('returnFromSpace', 'true');
-        // When returning from the space room, show the artifacts if conditions are met
-        showArtifacts();
-    });
+    // Function to handle entering a room
+    function enterRoom(roomName) {
+        console.log(`Entering room: ${roomName}`);
+        // Check if entering the Testworld2 room directly
+        if (roomName === "Testworld2") {
+            // Hide artifacts when entering Testworld2 directly
+            hideArtifacts();
+            sessionStorage.setItem('returnFromSpace', 'false');
+        }
+        // Check if returning from the Space_Room
+        else if (roomName === "Space_Room") {
+            console.log("Returning from Space_Room");
+            sessionStorage.setItem('returnFromSpace', 'true');
+            // Show artifacts when returning from the Space_Room
+            showArtifacts();
+        }
+    }
 
     // Function to show artifacts if conditions are met
     function showArtifacts() {
@@ -199,12 +209,30 @@
         if (lenwoodCollected && returnedFromSpace) {
             console.log('Showing Lenwood');
             lenwood.setAttribute('visible', 'true');
+        } else {
+            console.log('Hiding Lenwood');
+            lenwood.setAttribute('visible', 'false');
         }
         if (sweingCollected && returnedFromSpace) {
             console.log('Showing Sweing');
             sweing.setAttribute('visible', 'true');
+        } else {
+            console.log('Hiding Sweing');
+            sweing.setAttribute('visible', 'false');
         }
     }
+
+    // Function to hide artifacts
+    function hideArtifacts() {
+        const lenwood = document.querySelector('#lenwoodArtifact');
+        const sweing = document.querySelector('#sweingArtifact');
+        // Hide Lenwood and Sweing artifacts
+        lenwood.setAttribute('visible', 'false');
+        sweing.setAttribute('visible', 'false');
+    }
+
+    // Simulate entering a room (replace "Testworld2" with the actual room name variable)
+    enterRoom("Testworld2");
 
     // Function to simulate collecting Lenwood artifact
     function collectLenwood() {
@@ -219,9 +247,6 @@
     // Debugging: Call the collect functions to simulate the artifacts being collected
     collectLenwood();
     collectSweing();
-
-    // When the window loads, check if the artifacts should be shown
-    window.addEventListener('load', showArtifacts);
 });
 
     </script>
