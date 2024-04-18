@@ -56,15 +56,28 @@
                                   label_text:Gem;"
                 circles-pickup-networked></a-entity> 
               -->
-      <a-entity id="welcome_description" position="-0.613 0.899 -8.491" rotation="0 84.07419837126648 0" 
-                circles-description="title_text_front: Ingenium Lab; title_text_back: Ingenium Lab; description_text_front: Welcome to the ingenium lab, here you will find an adventure awaiting.; description_text_back: Welcome to the ingenium lab, here you will find an adventure awaiting." 
-                circles-lookat="targetElement: #Player1Cam"><a-entity><a-entity position="" rotation=""><a-entity circles-rounded-rectangle="width: 2; height: 1.2; radius: 0.15" 
-                material="color: rgb(255,255,255); opacity: 0.9; shader: flat; transparent: true; side: double"></a-entity><a-entity position="-1 0.6 0"><a-entity id="title_text" 
-                position="0.1 -0.1 0" text="anchor: left; baseline: top; wrapCount: 20; color: rgb(0,0,0); width: 1.8; height: 0.14999999999999997; font: /global/assets/fonts/Roboto-msdf.json; value: Ingenium Lab"></a-entity>
-                <a-entity id="description_text" position="0.1 -0.35 0.01" 
-                text="anchor: left; baseline: top; wrapCount: 33; color: rgb(0,0,0); width: 1.8; height: 0.7; font: /global/assets/fonts/Roboto-msdf.json; value: Welcome to the ingenium lab, here you will find an adventure awaiting."></a-entity>
-              </a-entity><a-entity position="1 0.6 -0.01" rotation=""><a-entity id="title_text2" rotation="0 180 0" position="-0.1 -0.1 0" text="anchor: left; baseline: top; wrapCount: 20; color: rgb(0,0,0); width: 1.8; height: 0.14999999999999997; font: /global/assets/fonts/Roboto-msdf.json; value: Ingenium Lab"></a-entity>
-              <a-entity id="description_text2" rotation="0 180 0" position="-0.1 -0.35 0" text="anchor: left; baseline: top; wrapCount: 33; color: rgb(0,0,0); width: 1.8; height: 0.7; font: /global/assets/fonts/Roboto-msdf.json; value: Welcome to the ingenium lab, here you will find an adventure awaiting."></a-entity></a-entity><a-entity geometry="primitive: triangle; vertexA: 0.2 0 0; vertexB: -0.2 0 0; vertexC: 0 -0.2 0" material="color: rgb(255,255,255); opacity: 0.9; shader: flat; transparent: true; side: double" visible="" position="0 -0.6 0" rotation=""></a-entity></a-entity><a-entity id="rotate_desc_control" class="interactive button interactive_toggle" position="0 0.8 0" circles-interactive-visible="" geometry="primitive: plane; width: 0.3; height: 0.3" material="src: /global/assets/textures/icons/Icon-Rotate.png; color: rgb(255,255,255); shader: flat; transparent: true; side: double"></a-entity></a-entity></a-entity>
+      <a-entity id="welcome_description" position="0.594 0.871 -7.224" rotation="0 0 0"
+                circles-description=" title_text_front:Ingenium Lab;
+                                    title_text_back:Ingenium Lab;
+                                    description_text_front:The ingenium lab will host your adventure through time! Any technology you find in your travels, will return back here.;
+                                    description_text_back:The ingenium lab will host your adventure through time! Any technology you find in your travels, will return back here.;
+                                    lookAtCamera:true;
+                                    "></a-entity>
+
+      <a-entity id="sewing_description" position="0.643 2.023 8.909" rotation="0 0 0"
+                circles-description=" title_text_front:Sewing Machine;
+                                      title_text_back:Sewing Machine;
+                                        description_text_front:The sewing machine was an important development during the industrial era. It revolutionized textile manufacturing.;
+                                         description_text_back:The sewing machine was an important development during the industrial era. It revolutionized textile manufacturing.;
+                                          lookAtCamera:true;
+                                          "></a-entity>
+
+      <a-entity id="LEM_description" position="-0.366 2.023 8.909" rotation="0 0 0"
+                circles-description=" title_text_front:LEM;
+                                      title_text_back:LEM;
+                                      description_text_front:The LEM was an important development in space travel during the 1960s, models like this were used to land on the moon.;
+                                        description_text_back:The LEM was an important development in space travel during the 1960s, models like this were used to land on the moon.;                                              lookAtCamera:true;
+                                        "></a-entity>
 
       <a-entity id="Portal-Wardrobe"
                 position="-4.786 1.069 0" rotation="0 0 0"
@@ -102,6 +115,7 @@
           scale="0.370 0.370 0.370"  
           visible="true"> <!-- Set visibility to false initially -->
 </a-entity>
+
 
 <!-- Sweing on its own stand -->
 <a-entity id="sweingArtifact"
