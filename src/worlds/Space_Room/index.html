@@ -460,25 +460,6 @@
         //
         console.log("key8 clicked");
       });
-
-
-
-  // Add cursor-listener component to make the printer model clickable
-      AFRAME.registerComponent('cursor-listener', {
-        init: function () {
-          var el = this.el;
-          el.addEventListener('click', function (evt) {
-            // Check if the clicked entity is the printer model
-            if (el.id === 'printer') {
-              // Show the printernote image
-              var printer_note = document.getElementById('printer_note');
-              if (printer_note) {
-                printer_note.setAttribute('visible', true);
-              }
-            }
-          });
-        }
-      });
   </script>
   </body>
 </html>
