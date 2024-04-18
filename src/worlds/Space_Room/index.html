@@ -51,6 +51,19 @@
         <a-asset-item id='hubble_telescope' src='assets/models/hubble.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id='lem_model' src='assets/models/LEM.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
+        <!--keys-->
+        <a-asset-item id='key_0' src='assets/models/key0.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='key_1' src='assets/models/key1.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='key_2' src='assets/models/key2.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='key_3' src='assets/models/key3.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='key_4' src='assets/models/key4.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='key_5' src='assets/models/key5.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='key_6' src='assets/models/key6.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='key_7' src='assets/models/key7.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='key_8' src='assets/models/key8.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id='key_9' src='assets/models/key9.glb' response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+
         <a-asset-item id="navmesh_gltf" src="assets/models/floor.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <img id='screen' src='assets/instructions.jpg' crossorigin="anonymous">
         <img id='screen2' src='assets/computer_screen.jpg' crossorigin="anonymous">
@@ -156,7 +169,37 @@
       <a-entity id="moonModel" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#moon_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       <a-entity id="hubbleModel" position="0 -0.4 0" rotation="0 0 0" scale="1 1 1" gltf-model="#hubble_telescope" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
 
-      
+      <!--keys code-->
+      <a-entity id="keyboard_0" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="key0" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_0" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+      <a-entity id="keyboard_1" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="key1" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_1" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+      <a-entity id="keyboard_2" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="key2" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_2" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+      <a-entity id="keyboard_3" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="key3" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_3" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+      <a-entity id="keyboard_4" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="key4" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_4" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+      <a-entity id="keyboard_5" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="key5" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_5" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+      <a-entity id="keyboard_6" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="key6" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_6" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+      <a-entity id="keyboard_7" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="key7" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_7" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+      <a-entity id="keyboard_8" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="key8" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_8" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+      <a-entity id="keyboard_9" position="0 -0.4 0" rotation="0 0 0">
+        <a-entity class="button interactive" id="key9" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="#key_9" circles-sphere-env-map="src:#skyMap;" animation__mouseenter="property:position.y; to: -0.01; startEvents:mouseenter; loop: false;dur: 500;" animation__mouseleave="property:position.y; to: 0.0; startEvents:mouseleave; loop: false; dur: 500;" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
 
       <a-entity id="Portal-Testworld2"
                 position="-5.515 1.069 -3.064" rotation="0 0 0"
@@ -192,38 +235,6 @@
                 material='shader:flat; src:#skyMap; side:back;'>
       </a-entity>
 
-     
-
-       
-<a-entity position="1 1 -4">
-  <a-box position="0.2 0 0" width="2.5" height="0.05" depth="1" color="#333"></a-box>
-  <!-- Define Button 1 -->
-  <a-box class="interactive-key" position="-0.75 0.05 0" width="0.3" height="0.05" depth="0.1" color="gray">
-    <a-text value="1"  position="0 0.08 0.06" rotation="0 0 0" width="4" color="white"></a-text>
-  </a-box>
-
-  <!-- Button 2 -->
-  <a-box class="interactive-key" position="-0.25 0.05 0" width="0.3" height="0.05" depth="0.1" color="gray">
-    <a-text value="2" position="0 0.08 0.06" rotation="0 0 0" width="4" color="white"></a-text>
-  </a-box>
-
-  <!-- Button 3 -->
-  <a-box class="interactive-key" position="0.25 0.05 0" width="0.3" height="0.05" depth="0.1" color="gray">
-    <a-text value="3" position="0 0.08 0.06" rotation="0 0 0" width="4" color="white"></a-text>
-  </a-box>
-
-
-  <!-- Button 4 -->
-  <a-box class="interactive-key" position="0.75 0.05 0" width="0.3" height="0.05" depth="0.1" color="gray">
-    <a-text value="4" position="0 0.08 0.06" rotation="0 0 0" width="4" color="white"></a-text>
-  </a-box>
-
-
-  <!-- Button 5 -->
-  <a-box class="interactive-key" position="1.15 0.05 0" width="0.3" height="0.05" depth="0.1" color="gray">
-    <a-text value="5" position="0 0.08 0.06" rotation="0 0 0" width="4" color="white"></a-text>
-  </a-box>
-
     </a-scene>
 
     <circles-end-scripts/>
@@ -258,6 +269,19 @@
       const cableR1 = document.getElementById('cableright1');
       const cableR2 = document.getElementById('cableright2');
       const cableR3 = document.getElementById('cableright3');
+
+      //keys
+      const key0 = document.getElementById('key0');
+      const key1 = document.getElementById('key1');
+      const key2 = document.getElementById('key2');
+      const key3 = document.getElementById('key3');
+      const key4 = document.getElementById('key4');
+      const key5 = document.getElementById('key5');
+      const key6 = document.getElementById('key6');
+      const key7 = document.getElementById('key7');
+      const key8 = document.getElementById('key8');
+      const key9 = document.getElementById('key9');
+
       
       let server_l1 = false, server_l2 = false, server_l3 = false, server_l4 = false, server_l5 = false;
       let server_r1 = false, server_r2 = false, server_r3 = false, server_r4 = false, server_r5 = false;
@@ -407,23 +431,6 @@
       });
 
 
-
-      AFRAME.registerComponent('interactive-key', {
-    init: function() {
-      this.el.addEventListener('mousedown', function(evt) {
-        this.setAttribute('material', 'color', '#333');
-      });
-      this.el.addEventListener('mouseup', function(evt) {
-        this.setAttribute('material', 'color', 'gray');
-      });
-      this.el.addEventListener('mouseenter', function(evt) {
-        this.setAttribute('material', 'color', '#ccc');
-      });
-      this.el.addEventListener('mouseleave', function(evt) {
-        this.setAttribute('material', 'color', 'gray');
-      });
-    }
-  });
 
   // Add cursor-listener component to make the printer model clickable
       AFRAME.registerComponent('cursor-listener', {
